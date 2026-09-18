@@ -1,0 +1,68 @@
+{
+  "total_records": 12000,
+  "structural_valid_count": 12000,
+  "ppg_valid_count": 12000,
+  "ppg_valid_percentage": 100.0,
+  "abp_valid_count": 11995,
+  "abp_valid_percentage": 99.95833333333334,
+  "paired_valid_count": 11995,
+  "paired_valid_percentage": 99.95833333333334,
+  "quality_status_breakdown": {
+    "valid_paired": 11995,
+    "valid_ppg_only": 5
+  },
+  "duration_statistics": {
+    "min_sec": 8.0,
+    "max_sec": 592.0,
+    "mean_sec": 222.46,
+    "median_sec": 160.0,
+    "std_sec": 196.55108004451836,
+    "p25_sec": 40.0,
+    "p75_sec": 400.0
+  },
+  "samples_statistics": {
+    "min_samples": 1000,
+    "max_samples": 74000,
+    "mean_samples": 27807.5,
+    "median_samples": 20000.0
+  },
+  "ppg_signal_diagnostics": {
+    "valid_records_count": 12000,
+    "valid_percentage": 100.0,
+    "ptp_mean": 2.584500325839035,
+    "ptp_median": 2.694037145650049,
+    "ptp_min": 0.2893450635386119,
+    "ptp_max": 4.001955034213099,
+    "ptp_p05": 0.5796676441837731,
+    "ptp_p95": 4.001955034213099,
+    "std_mean": 0.5066727727129652,
+    "std_median": 0.5872149513825655
+  },
+  "abp_reference_diagnostics": {
+    "valid_records_count": 11995,
+    "valid_percentage": 99.95833333333334,
+    "sbp_mean": 127.24179376255464,
+    "sbp_std": 21.94545267887851,
+    "sbp_median": 125.54926558844421,
+    "sbp_min": 69.65983337647897,
+    "sbp_max": 196.4428583151145,
+    "dbp_mean": 65.72373447271694,
+    "dbp_std": 11.144767901506462,
+    "dbp_median": 63.1883669450073,
+    "dbp_min": 50.4954696841393,
+    "dbp_max": 134.50445214010443,
+    "map_mean": 87.40938894141922,
+    "map_std": 13.64560205656622,
+    "hr_mean": 87.56497267485008,
+    "hr_std": 15.7206261301806,
+    "beat_valid_pct_mean": 99.7199418169436
+  },
+  "ppg_rejection_reasons": {},
+  "abp_rejection_reasons": {
+    "DBP_OUT_OF_RANGE_P05_149.0_MMHG": 1,
+    "LOW_PULSE_PRESSURE_8.5_MMHG": 1,
+    "DBP_OUT_OF_RANGE_P05_141.8_MMHG": 1,
+    "DBP_OUT_OF_RANGE_P05_155.5_MMHG": 1,
+    "LOW_PULSE_PRESSURE_6.1_MMHG": 1
+  }
+}

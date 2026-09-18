@@ -1,0 +1,14 @@
+=== Training Log: Phase 4B Causal Temporal GRU ===
+Epoch 01/40 | TrainLoss=367.408 | ValLoss=70.428 | SBP=11.53 DBP=6.77 Comb=9.15 mmHg | LR=1.0e-03 | BEST *
+Epoch 02/40 | TrainLoss=92.339 | ValLoss=66.484 | SBP=11.79 DBP=5.62 Comb=8.71 mmHg | LR=1.0e-03 | BEST *
+Epoch 03/40 | TrainLoss=87.154 | ValLoss=65.795 | SBP=11.45 DBP=5.84 Comb=8.65 mmHg | LR=1.0e-03 | BEST *
+Epoch 04/40 | TrainLoss=85.327 | ValLoss=62.471 | SBP=11.11 DBP=5.44 Comb=8.27 mmHg | LR=1.0e-03 | BEST *
+Epoch 05/40 | TrainLoss=84.857 | ValLoss=60.228 | SBP=10.74 DBP=5.33 Comb=8.03 mmHg | LR=1.0e-03 | BEST *
+Epoch 06/40 | TrainLoss=84.959 | ValLoss=61.094 | SBP=10.91 DBP=5.34 Comb=8.13 mmHg | LR=1.0e-03 | NoImprove=1
+Epoch 07/40 | TrainLoss=84.230 | ValLoss=62.720 | SBP=11.18 DBP=5.42 Comb=8.30 mmHg | LR=1.0e-03 | NoImprove=2
+Epoch 08/40 | TrainLoss=84.228 | ValLoss=64.161 | SBP=11.35 DBP=5.58 Comb=8.46 mmHg | LR=1.0e-03 | NoImprove=3
+Epoch 09/40 | TrainLoss=83.941 | ValLoss=60.482 | SBP=10.81 DBP=5.30 Comb=8.06 mmHg | LR=1.0e-03 | NoImprove=4
+Epoch 10/40 | TrainLoss=82.925 | ValLoss=61.725 | SBP=10.95 DBP=5.44 Comb=8.19 mmHg | LR=5.0e-04 | NoImprove=5
+Epoch 11/40 | TrainLoss=82.737 | ValLoss=63.056 | SBP=11.17 DBP=5.51 Comb=8.34 mmHg | LR=5.0e-04 | NoImprove=6
+Epoch 12/40 | TrainLoss=82.418 | ValLoss=62.336 | SBP=11.02 DBP=5.51 Comb=8.27 mmHg | LR=5.0e-04 | NoImprove=7
+Epoch 13/40 | TrainLoss=82.681 | ValLoss=60.587 | SBP=10.79 DBP=5.35 Comb=8.07 mmHg | LR=5.0e-04 | NoImprove=8

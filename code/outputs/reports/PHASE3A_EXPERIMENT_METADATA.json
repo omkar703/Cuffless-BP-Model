@@ -1,0 +1,83 @@
+{
+  "phase": "Phase 3A — PPG-Only Classical Baseline, Evaluation & Error Analysis",
+  "project": "Cuffless Blood Pressure Estimation from PPG using MAX30102 + ESP32",
+  "execution_timestamp": "2026-09-15T17:55:00+05:30",
+  "hardware": {
+    "cpu_cores": 8,
+    "gpu_detected": "NVIDIA GeForce GTX 1650 Ti",
+    "gpu_driver_version": "595.91.07",
+    "cuda_used_for_classical_models": false,
+    "execution_device": "CPU"
+  },
+  "environment": {
+    "python_version": "3.10.21",
+    "scikit_learn_version": "1.7.2",
+    "numpy_version": "2.2.6",
+    "scipy_version": "1.15.2",
+    "pandas_version": "2.3.3",
+    "h5py_version": "3.16.0",
+    "matplotlib_version": "3.10.9"
+  },
+  "reproducibility": {
+    "random_seed": 42,
+    "split_seed": 42,
+    "n_jobs": 8
+  },
+  "dataset_parameters": {
+    "sampling_frequency_hz": 125,
+    "window_duration_seconds": 10.0,
+    "window_samples": 1250,
+    "overlap": 0.0,
+    "total_records": 12000,
+    "train_records": 8400,
+    "validation_records": 1800,
+    "test_records": 1800,
+    "total_modeling_eligible_windows": 261339,
+    "train_windows": 183517,
+    "validation_windows": 39461,
+    "test_windows": 38361,
+    "channel_0": "PPG (Sole Model Input)",
+    "channel_1": "ABP (Reference Invasive BP Beats Only)",
+    "channel_2": "ECG (Strictly Excluded)"
+  },
+  "representations_evaluated": [
+    {
+      "name": "Branch_A_Amplitude_Preserving",
+      "feature_count": 14,
+      "description": "0.5-8.0 Hz bandpass filtered PPG, no amplitude normalization, preserving raw optical scale"
+    },
+    {
+      "name": "Branch_B_Normalized_Morphology",
+      "feature_count": 26,
+      "description": "Per-window Z-score normalized PPG, isolating timing, geometric morphology, derivatives, and spectral properties"
+    },
+    {
+      "name": "Branch_C_Combined",
+      "feature_count": 40,
+      "description": "Fusion of Branch A scale-dependent and Branch B scale-invariant features"
+    }
+  ],
+  "feature_ablation_groups": [
+    "Ablation_0_Dummy (0 features)",
+    "Ablation_1_Basic (11 features: Group A)",
+    "Ablation_2_Basic_Timing (17 features: Groups A + B)",
+    "Ablation_3_Basic_Timing_Morph (24 features: Groups A + B + C)",
+    "Ablation_4_Plus_VPG (29 features: Groups A + B + C + D)",
+    "Ablation_5_Plus_APG (33 features: Groups A + B + C + D + E)",
+    "Ablation_6_All_Features (36 features: Groups A + B + C + D + E + F)"
+  ],
+  "models_evaluated": [
+    "DummyRegressor(strategy='mean')",
+    "LinearRegression()",
+    "Ridge(alpha in [0.01, 0.1, 1.0, 10.0, 100.0])",
+    "RandomForestRegressor(n_estimators=100, max_depth=12, random_state=42)",
+    "HistGradientBoostingRegressor(max_iter=150, max_depth=8, random_state=42)"
+  ],
+  "strict_assertions": {
+    "zero_record_leakage": true,
+    "zero_forbidden_features": true,
+    "zero_calibration": true,
+    "no_deep_learning": true,
+    "test_evaluated_once_after_freezing": true
+  }
+}

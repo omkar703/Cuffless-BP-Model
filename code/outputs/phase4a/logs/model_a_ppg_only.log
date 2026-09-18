@@ -1,0 +1,25 @@
+=== Training Log: model_a_ppg_only ===
+Epoch 01/50 | TrainLoss=251.120 | ValLoss=92.412 | SBP=15.39 DBP=7.36 Comb=11.37 mmHg | LR=1.0e-03 | BEST *
+Epoch 02/50 | TrainLoss=109.156 | ValLoss=93.169 | SBP=15.25 DBP=7.60 Comb=11.43 mmHg | LR=1.0e-03 | NoImprove=1
+Epoch 03/50 | TrainLoss=105.831 | ValLoss=104.945 | SBP=16.90 DBP=8.31 Comb=12.61 mmHg | LR=1.0e-03 | NoImprove=2
+Epoch 04/50 | TrainLoss=103.175 | ValLoss=85.105 | SBP=14.14 DBP=7.02 Comb=10.58 mmHg | LR=1.0e-03 | BEST *
+Epoch 05/50 | TrainLoss=101.949 | ValLoss=90.926 | SBP=15.03 DBP=7.31 Comb=11.17 mmHg | LR=1.0e-03 | NoImprove=1
+Epoch 06/50 | TrainLoss=100.469 | ValLoss=87.428 | SBP=14.42 DBP=7.19 Comb=10.80 mmHg | LR=1.0e-03 | NoImprove=2
+Epoch 07/50 | TrainLoss=99.497 | ValLoss=84.223 | SBP=14.10 DBP=6.91 Comb=10.50 mmHg | LR=1.0e-03 | BEST *
+Epoch 08/50 | TrainLoss=98.936 | ValLoss=90.050 | SBP=14.99 DBP=7.13 Comb=11.06 mmHg | LR=1.0e-03 | NoImprove=1
+Epoch 09/50 | TrainLoss=98.182 | ValLoss=81.160 | SBP=13.70 DBP=6.67 Comb=10.18 mmHg | LR=1.0e-03 | BEST *
+Epoch 10/50 | TrainLoss=97.205 | ValLoss=84.892 | SBP=14.14 DBP=6.96 Comb=10.55 mmHg | LR=1.0e-03 | NoImprove=1
+Epoch 11/50 | TrainLoss=96.540 | ValLoss=83.019 | SBP=14.07 DBP=6.64 Comb=10.35 mmHg | LR=1.0e-03 | NoImprove=2
+Epoch 12/50 | TrainLoss=96.196 | ValLoss=83.661 | SBP=14.06 DBP=6.74 Comb=10.40 mmHg | LR=1.0e-03 | NoImprove=3
+Epoch 13/50 | TrainLoss=95.261 | ValLoss=80.062 | SBP=13.44 DBP=6.60 Comb=10.02 mmHg | LR=1.0e-03 | BEST *
+Epoch 14/50 | TrainLoss=94.506 | ValLoss=81.549 | SBP=13.70 DBP=6.66 Comb=10.18 mmHg | LR=1.0e-03 | NoImprove=1
+Epoch 15/50 | TrainLoss=94.070 | ValLoss=79.343 | SBP=13.25 DBP=6.64 Comb=9.94 mmHg | LR=1.0e-03 | BEST *
+Epoch 16/50 | TrainLoss=93.317 | ValLoss=81.188 | SBP=13.80 DBP=6.57 Comb=10.18 mmHg | LR=1.0e-03 | NoImprove=1
+Epoch 17/50 | TrainLoss=92.390 | ValLoss=85.248 | SBP=14.44 DBP=6.75 Comb=10.59 mmHg | LR=1.0e-03 | NoImprove=2
+Epoch 18/50 | TrainLoss=91.805 | ValLoss=87.663 | SBP=14.45 DBP=7.22 Comb=10.83 mmHg | LR=1.0e-03 | NoImprove=3
+Epoch 19/50 | TrainLoss=91.090 | ValLoss=82.799 | SBP=14.16 DBP=6.55 Comb=10.35 mmHg | LR=1.0e-03 | NoImprove=4
+Epoch 20/50 | TrainLoss=89.265 | ValLoss=76.426 | SBP=12.89 DBP=6.37 Comb=9.63 mmHg | LR=5.0e-04 | BEST *
+Epoch 21/50 | TrainLoss=88.507 | ValLoss=77.903 | SBP=13.14 DBP=6.41 Comb=9.77 mmHg | LR=5.0e-04 | NoImprove=1
+Epoch 22/50 | TrainLoss=88.207 | ValLoss=77.827 | SBP=13.17 DBP=6.33 Comb=9.75 mmHg | LR=5.0e-04 | NoImprove=2
+Epoch 23/50 | TrainLoss=88.083 | ValLoss=74.961 | SBP=12.64 DBP=6.29 Comb=9.46 mmHg | LR=5.0e-04 | BEST *
+Epoch 24/50 | TrainLoss=87.831 | ValLoss=77.903 | SBP=13.16 DBP=6.34 Comb=9.75 mmHg | LR=5.0e-04 | NoImprove=1

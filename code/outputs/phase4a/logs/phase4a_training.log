@@ -1,0 +1,112 @@
+2026-09-17 14:02:59,892 | INFO    | phase4a:61 | Device: cuda
+2026-09-17 14:02:59,897 | INFO    | phase4a:63 | GPU: NVIDIA GeForce GTX 1650 Ti
+2026-09-17 14:02:59,897 | INFO    | phase4a:64 | CUDA version: 13.0
+2026-09-17 14:02:59,897 | INFO    | phase4a:65 | Initial GPU Memory: allocated=0.0 MB, reserved=0.0 MB, total=3716 MB
+2026-09-17 14:02:59,897 | INFO    | phase4a:68 | ======================================================================
+2026-09-17 14:02:59,897 | INFO    | phase4a:69 | PHASE 4A — Neural PPG Baseline
+2026-09-17 14:02:59,897 | INFO    | phase4a:70 | ======================================================================
+2026-09-17 14:02:59,897 | INFO    | phase4a:71 | Mode: SMOKE TEST
+2026-09-17 14:02:59,898 | INFO    | phase4a:72 | Phase 3A baselines: SBP=13.93 mmHg, DBP=7.05 mmHg
+2026-09-17 14:02:59,898 | INFO    | phase4a:116 | ============================================================
+2026-09-17 14:02:59,898 | INFO    | phase4a:117 | STARTING SMOKE TEST
+2026-09-17 14:02:59,898 | INFO    | phase4a:118 | ============================================================
+2026-09-17 14:02:59,898 | INFO    | phase4a:122 | Loading 128 training windows for smoke test...
+2026-09-17 14:03:04,999 | INFO    | phase4a:137 | GPU memory after model init: GPU Memory: allocated=0.6 MB, reserved=2.0 MB, total=3716 MB
+2026-09-17 14:03:08,982 | INFO    | phase4a:142 | CHECK 1: Forward pass shape...
+2026-09-17 14:03:09,897 | INFO    | phase4a:153 |   Output shape: torch.Size([32, 2]) ✓
+2026-09-17 14:03:09,897 | INFO    | phase4a:154 |   Output finite: ✓
+2026-09-17 14:03:09,898 | INFO    | phase4a:157 | CHECK 2: Backward pass + gradient check...
+2026-09-17 14:03:10,048 | INFO    | phase4a:168 |   Loss: 1005.1300 ✓
+2026-09-17 14:03:10,048 | INFO    | phase4a:169 |   Gradients finite: ✓
+2026-09-17 14:03:10,118 | INFO    | phase4a:172 | GPU memory after backward: GPU Memory: allocated=19.0 MB, reserved=126.0 MB, total=3716 MB
+2026-09-17 14:03:10,118 | INFO    | phase4a:175 | CHECK 3: 2 mini-epochs (loss should trend downward)...
+2026-09-17 14:03:10,228 | INFO    | phase4a:191 |   Mini-epoch 1/2: loss=997.0250
+2026-09-17 14:03:10,334 | INFO    | phase4a:191 |   Mini-epoch 2/2: loss=992.8560
+2026-09-17 14:03:10,334 | INFO    | phase4a:193 | GPU memory after mini-epochs: GPU Memory: allocated=19.4 MB, reserved=126.0 MB, total=3716 MB
+2026-09-17 14:03:10,334 | INFO    | phase4a:194 | SMOKE TEST PASSED ✓
+2026-09-17 14:03:10,334 | INFO    | phase4a:195 | ============================================================
+2026-09-17 14:03:10,335 | INFO    | phase4a:84 | Smoke test complete. Exiting (use --full-run to train).
+2026-09-17 14:04:07,749 | INFO    | phase4a:61 | Device: cuda
+2026-09-17 14:04:07,751 | INFO    | phase4a:63 | GPU: NVIDIA GeForce GTX 1650 Ti
+2026-09-17 14:04:07,751 | INFO    | phase4a:64 | CUDA version: 13.0
+2026-09-17 14:04:07,752 | INFO    | phase4a:65 | Initial GPU Memory: allocated=0.0 MB, reserved=0.0 MB, total=3716 MB
+2026-09-17 14:04:07,752 | INFO    | phase4a:68 | ======================================================================
+2026-09-17 14:04:07,752 | INFO    | phase4a:69 | PHASE 4A — Neural PPG Baseline
+2026-09-17 14:04:07,752 | INFO    | phase4a:70 | ======================================================================
+2026-09-17 14:04:07,752 | INFO    | phase4a:71 | Mode: SMOKE TEST
+2026-09-17 14:04:07,752 | INFO    | phase4a:72 | Phase 3A baselines: SBP=13.93 mmHg, DBP=7.05 mmHg
+2026-09-17 14:04:07,752 | INFO    | phase4a:116 | ============================================================
+2026-09-17 14:04:07,752 | INFO    | phase4a:117 | STARTING SMOKE TEST
+2026-09-17 14:04:07,752 | INFO    | phase4a:118 | ============================================================
+2026-09-17 14:04:07,753 | INFO    | phase4a:122 | Loading 128 training windows for smoke test...
+2026-09-17 14:04:12,820 | INFO    | phase4a:137 | GPU memory after model init: GPU Memory: allocated=0.6 MB, reserved=2.0 MB, total=3716 MB
+2026-09-17 14:04:13,951 | INFO    | phase4a:142 | CHECK 1: Forward pass shape...
+2026-09-17 14:04:14,227 | INFO    | phase4a:153 |   Output shape: torch.Size([32, 2]) ✓
+2026-09-17 14:04:14,227 | INFO    | phase4a:154 |   Output finite: ✓
+2026-09-17 14:04:14,227 | INFO    | phase4a:157 | CHECK 2: Backward pass + gradient check...
+2026-09-17 14:04:14,364 | INFO    | phase4a:168 |   Loss: 1005.1300 ✓
+2026-09-17 14:04:14,364 | INFO    | phase4a:169 |   Gradients finite: ✓
+2026-09-17 14:04:14,450 | INFO    | phase4a:172 | GPU memory after backward: GPU Memory: allocated=19.0 MB, reserved=126.0 MB, total=3716 MB
+2026-09-17 14:04:14,450 | INFO    | phase4a:175 | CHECK 3: 2 mini-epochs (loss should trend downward)...
+2026-09-17 14:04:14,607 | INFO    | phase4a:191 |   Mini-epoch 1/2: loss=997.0250
+2026-09-17 14:04:14,764 | INFO    | phase4a:191 |   Mini-epoch 2/2: loss=992.8560
+2026-09-17 14:04:14,765 | INFO    | phase4a:193 | GPU memory after mini-epochs: GPU Memory: allocated=19.4 MB, reserved=126.0 MB, total=3716 MB
+2026-09-17 14:04:14,765 | INFO    | phase4a:194 | SMOKE TEST PASSED ✓
+2026-09-17 14:04:14,766 | INFO    | phase4a:195 | ============================================================
+2026-09-17 14:04:14,766 | INFO    | phase4a:84 | Smoke test complete. Exiting (use --full-run to train).
+2026-09-17 14:05:19,575 | INFO    | phase4a:61 | Device: cuda
+2026-09-17 14:05:19,577 | INFO    | phase4a:63 | GPU: NVIDIA GeForce GTX 1650 Ti
+2026-09-17 14:05:19,577 | INFO    | phase4a:64 | CUDA version: 13.0
+2026-09-17 14:05:19,577 | INFO    | phase4a:65 | Initial GPU Memory: allocated=0.0 MB, reserved=0.0 MB, total=3716 MB
+2026-09-17 14:05:19,577 | INFO    | phase4a:68 | ======================================================================
+2026-09-17 14:05:19,577 | INFO    | phase4a:69 | PHASE 4A — Neural PPG Baseline
+2026-09-17 14:05:19,577 | INFO    | phase4a:70 | ======================================================================
+2026-09-17 14:05:19,577 | INFO    | phase4a:71 | Mode: FULL RUN
+2026-09-17 14:05:19,577 | INFO    | phase4a:72 | Phase 3A baselines: SBP=13.93 mmHg, DBP=7.05 mmHg
+2026-09-17 14:05:19,577 | INFO    | phase4a:116 | ============================================================
+2026-09-17 14:05:19,577 | INFO    | phase4a:117 | STARTING SMOKE TEST
+2026-09-17 14:05:19,578 | INFO    | phase4a:118 | ============================================================
+2026-09-17 14:05:19,578 | INFO    | phase4a:122 | Loading 128 training windows for smoke test...
+2026-09-17 14:05:25,400 | INFO    | phase4a:137 | GPU memory after model init: GPU Memory: allocated=0.6 MB, reserved=2.0 MB, total=3716 MB
+2026-09-17 14:05:27,125 | INFO    | phase4a:142 | CHECK 1: Forward pass shape...
+2026-09-17 14:05:27,272 | INFO    | phase4a:153 |   Output shape: torch.Size([32, 2]) ✓
+2026-09-17 14:05:27,272 | INFO    | phase4a:154 |   Output finite: ✓
+2026-09-17 14:05:27,272 | INFO    | phase4a:157 | CHECK 2: Backward pass + gradient check...
+2026-09-17 14:05:27,341 | INFO    | phase4a:168 |   Loss: 1005.1300 ✓
+2026-09-17 14:05:27,341 | INFO    | phase4a:169 |   Gradients finite: ✓
+2026-09-17 14:05:27,370 | INFO    | phase4a:172 | GPU memory after backward: GPU Memory: allocated=19.0 MB, reserved=126.0 MB, total=3716 MB
+2026-09-17 14:05:27,370 | INFO    | phase4a:175 | CHECK 3: 2 mini-epochs (loss should trend downward)...
+2026-09-17 14:05:27,476 | INFO    | phase4a:191 |   Mini-epoch 1/2: loss=997.0250
+2026-09-17 14:05:27,581 | INFO    | phase4a:191 |   Mini-epoch 2/2: loss=992.8560
+2026-09-17 14:05:27,582 | INFO    | phase4a:193 | GPU memory after mini-epochs: GPU Memory: allocated=19.4 MB, reserved=126.0 MB, total=3716 MB
+2026-09-17 14:05:27,582 | INFO    | phase4a:194 | SMOKE TEST PASSED ✓
+2026-09-17 14:05:27,582 | INFO    | phase4a:195 | ============================================================
+2026-09-17 14:05:27,584 | INFO    | phase4a:218 | ======================================================================
+2026-09-17 14:05:27,584 | INFO    | phase4a:219 | TRAINING model_a_ppg_only (n_channels=1)
+2026-09-17 14:05:27,584 | INFO    | phase4a:220 | ======================================================================
+2026-09-17 14:05:27,584 | INFO    | phase4a:225 | Loading train dataset...
+2026-09-17 14:06:13,178 | INFO    | phase4a:230 | Loading val dataset...
+2026-09-17 14:07:00,871 | INFO    | phase4a:245 | Train: 183517 windows | Val: 39461 windows
+2026-09-17 14:07:00,872 | INFO    | phase4a:246 | Batch size: 256 | Batches/epoch: 716
+2026-09-17 14:07:00,896 | INFO    | phase4a:251 | Model parameters: 146,530 total, 146,530 trainable
+2026-09-17 14:07:59,977 | INFO    | phase4a:332 | Epoch   1/50 | TrainLoss=251.1200 | ValLoss=92.4121 | SBP=15.39 DBP=7.36 Comb=11.37 | LR=1.0e-03 | BEST ✓
+2026-09-17 14:09:06,437 | INFO    | phase4a:332 | Epoch   2/50 | TrainLoss=109.1561 | ValLoss=93.1692 | SBP=15.25 DBP=7.60 Comb=11.43 | LR=1.0e-03 | NoImprove=1
+2026-09-17 14:10:34,980 | INFO    | phase4a:332 | Epoch   3/50 | TrainLoss=105.8307 | ValLoss=104.9450 | SBP=16.90 DBP=8.31 Comb=12.61 | LR=1.0e-03 | NoImprove=2
+2026-09-17 14:12:31,619 | INFO    | phase4a:332 | Epoch   4/50 | TrainLoss=103.1752 | ValLoss=85.1052 | SBP=14.14 DBP=7.02 Comb=10.58 | LR=1.0e-03 | BEST ✓
+2026-09-17 14:14:35,051 | INFO    | phase4a:332 | Epoch   5/50 | TrainLoss=101.9487 | ValLoss=90.9262 | SBP=15.03 DBP=7.31 Comb=11.17 | LR=1.0e-03 | NoImprove=1
+2026-09-17 14:17:03,710 | INFO    | phase4a:332 | Epoch   6/50 | TrainLoss=100.4695 | ValLoss=87.4276 | SBP=14.42 DBP=7.19 Comb=10.80 | LR=1.0e-03 | NoImprove=2
+2026-09-17 14:20:48,620 | INFO    | phase4a:332 | Epoch   7/50 | TrainLoss=99.4968 | ValLoss=84.2228 | SBP=14.10 DBP=6.91 Comb=10.50 | LR=1.0e-03 | BEST ✓
+2026-09-17 14:25:51,303 | INFO    | phase4a:332 | Epoch   8/50 | TrainLoss=98.9365 | ValLoss=90.0504 | SBP=14.99 DBP=7.13 Comb=11.06 | LR=1.0e-03 | NoImprove=1
+2026-09-17 14:30:56,069 | INFO    | phase4a:332 | Epoch   9/50 | TrainLoss=98.1818 | ValLoss=81.1604 | SBP=13.70 DBP=6.67 Comb=10.18 | LR=1.0e-03 | BEST ✓
+2026-09-17 14:35:59,700 | INFO    | phase4a:332 | Epoch  10/50 | TrainLoss=97.2053 | ValLoss=84.8922 | SBP=14.14 DBP=6.96 Comb=10.55 | LR=1.0e-03 | NoImprove=1
+2026-09-17 14:41:04,053 | INFO    | phase4a:332 | Epoch  11/50 | TrainLoss=96.5395 | ValLoss=83.0191 | SBP=14.07 DBP=6.64 Comb=10.35 | LR=1.0e-03 | NoImprove=2
+2026-09-17 14:46:25,536 | INFO    | phase4a:332 | Epoch  12/50 | TrainLoss=96.1958 | ValLoss=83.6612 | SBP=14.06 DBP=6.74 Comb=10.40 | LR=1.0e-03 | NoImprove=3
+2026-09-17 14:51:02,697 | INFO    | phase4a:332 | Epoch  13/50 | TrainLoss=95.2609 | ValLoss=80.0616 | SBP=13.44 DBP=6.60 Comb=10.02 | LR=1.0e-03 | BEST ✓
+2026-09-17 14:55:35,835 | INFO    | phase4a:332 | Epoch  14/50 | TrainLoss=94.5065 | ValLoss=81.5492 | SBP=13.70 DBP=6.66 Comb=10.18 | LR=1.0e-03 | NoImprove=1
+2026-09-17 15:00:47,567 | INFO    | phase4a:332 | Epoch  15/50 | TrainLoss=94.0702 | ValLoss=79.3435 | SBP=13.25 DBP=6.64 Comb=9.94 | LR=1.0e-03 | BEST ✓
+2026-09-17 15:06:00,122 | INFO    | phase4a:332 | Epoch  16/50 | TrainLoss=93.3174 | ValLoss=81.1884 | SBP=13.80 DBP=6.57 Comb=10.18 | LR=1.0e-03 | NoImprove=1
+2026-09-17 15:11:19,234 | INFO    | phase4a:332 | Epoch  17/50 | TrainLoss=92.3899 | ValLoss=85.2484 | SBP=14.44 DBP=6.75 Comb=10.59 | LR=1.0e-03 | NoImprove=2
+2026-09-17 15:17:36,798 | INFO    | phase4a:332 | Epoch  18/50 | TrainLoss=91.8054 | ValLoss=87.6628 | SBP=14.45 DBP=7.22 Comb=10.83 | LR=1.0e-03 | NoImprove=3
+2026-09-17 15:24:25,355 | INFO    | phase4a:332 | Epoch  19/50 | TrainLoss=91.0904 | ValLoss=82.7987 | SBP=14.16 DBP=6.55 Comb=10.35 | LR=5.0e-04 | NoImprove=4
+2026-09-17 15:30:33,711 | INFO    | phase4a:332 | Epoch  20/50 | TrainLoss=89.2651 | ValLoss=76.4256 | SBP=12.89 DBP=6.37 Comb=9.63 | LR=5.0e-04 | BEST ✓
+2026-09-17 15:36:31,883 | INFO    | phase4a:332 | Epoch  21/50 | TrainLoss=88.5071 | ValLoss=77.9026 | SBP=13.14 DBP=6.41 Comb=9.77 | LR=5.0e-04 | NoImprove=1

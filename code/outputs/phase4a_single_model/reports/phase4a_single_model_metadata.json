@@ -1,0 +1,73 @@
+{
+  "timestamp": "2026-09-18 13:28:44",
+  "experiment": "Phase 4A Single-Model (PPG + VPG + APG 1D CNN)",
+  "architecture": "PPGCNNBaseline",
+  "total_parameters": 146978,
+  "input_channels": 3,
+  "sampling_rate_hz": 125.0,
+  "window_samples": 1250,
+  "batch_size": 128,
+  "huber_delta": 5.0,
+  "best_epoch": 48,
+  "validation_metrics": {
+    "sbp": {
+      "mae": 11.288334846496582,
+      "rmse": 15.541536331176758,
+      "r2": 0.4867551922798157,
+      "bias": 0.5161022543907166,
+      "error_sd": 15.532964706420898,
+      "pct_within_5": 34.27941511872481,
+      "pct_within_10": 58.58949342388687,
+      "pct_within_15": 73.55363523478879,
+      "n_samples": 39461
+    },
+    "dbp": {
+      "mae": 5.621885299682617,
+      "rmse": 8.279030799865723,
+      "r2": 0.4258565902709961,
+      "bias": -0.6809294819831848,
+      "error_sd": 8.250980377197266,
+      "pct_within_5": 59.331998682243224,
+      "pct_within_10": 85.3728998251438,
+      "pct_within_15": 94.01941157091812,
+      "n_samples": 39461
+    },
+    "combined_mae": 8.4551100730896
+  },
+  "test_metrics": {
+    "sbp": {
+      "mae": 11.036849021911621,
+      "rmse": 14.989962577819824,
+      "r2": 0.5265111923217773,
+      "bias": 0.13237300515174866,
+      "error_sd": 14.989377975463867,
+      "pct_within_5": 34.51682698574073,
+      "pct_within_10": 58.455201897760745,
+      "pct_within_15": 73.51737441672532,
+      "n_samples": 38361
+    },
+    "dbp": {
+      "mae": 5.785909652709961,
+      "rmse": 8.515203475952148,
+      "r2": 0.447836697101593,
+      "bias": -0.9446436166763306,
+      "error_sd": 8.46264362335205,
+      "pct_within_5": 58.723703761632905,
+      "pct_within_10": 84.34868746904408,
+      "pct_within_15": 93.1831808347019,
+      "n_samples": 38361
+    },
+    "combined_mae": 8.411379337310791
+  },
+  "phase3a_baseline": {
+    "sbp_mae": 13.93,
+    "dbp_mae": 7.05,
+    "combined_mae": 10.49
+  },
+  "environment": {
+    "python": "3.10.21",
+    "pytorch": "2.14.0+cu130",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce GTX 1650 Ti"
+  }
+}

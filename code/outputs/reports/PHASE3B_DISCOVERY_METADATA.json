@@ -1,0 +1,49 @@
+{
+  "execution_mode": "FULL RUN",
+  "timestamp": "2026-09-15 22:07:30",
+  "python_version": "3.10.21 | packaged by conda-forge | (main, Aug 21 2026, 22:42:31) [GCC 14.4.0]",
+  "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.43",
+  "hardware_processor": "",
+  "gpu_used": false,
+  "random_seed": 42,
+  "feature_cache_path": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/features/features_cache.h5",
+  "total_windows_in_cache": 261339,
+  "context_lengths_sec": [
+    10,
+    20,
+    30,
+    60
+  ],
+  "context_k": [
+    0,
+    1,
+    2,
+    5
+  ],
+  "best_validation_context_k": 5,
+  "best_validation_context_sec": 60,
+  "champion_model": "HistGradientBoostingRegressor",
+  "hyperparameters": {
+    "max_iter": 150,
+    "max_depth": 8,
+    "random_state": 42
+  },
+  "research_decision": "CASE C \u2014 Multi-Scale Spatio-Temporal PPG Model Justified",
+  "elapsed_seconds": 149.18328213691711,
+  "validation_summary": {
+    "baseline_comb_mae": 10.503903700341255,
+    "best_comb_mae": 9.920681347976842,
+    "delta_comb_mae": 0.5832223523644124,
+    "extreme_sbp_hyper_bias_c0": -31.362978401264023,
+    "extreme_sbp_hyper_bias_best": -28.5912393155801
+  },
+  "test_summary": {
+    "sbp_mae": 13.442444409542993,
+    "sbp_rmse": 17.258237707011595,
+    "sbp_r2": 0.36384794285355215,
+    "dbp_mae": 6.767419771307994,
+    "dbp_rmse": 9.285783004019365,
+    "dbp_r2": 0.33104854442671894,
+    "comb_mae": 10.104932090425493
+  }
+}

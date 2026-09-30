@@ -1,0 +1,60 @@
+2026-09-29 23:23:31,160 [INFO] ================================================================================
+2026-09-29 23:23:31,160 [INFO]   PHASE 6B: REPLAY VALIDATION ON NEW MAX30102 HARDWARE CAPTURE
+2026-09-29 23:23:31,160 [INFO]   Project: Calibration-Free Cuffless BP Estimation (PPG Only)
+2026-09-29 23:23:31,160 [INFO] ================================================================================
+2026-09-29 23:23:31,160 [INFO] 
+[STEP 1] Input Dataset Ingestion & Compatibility Adapter...
+2026-09-29 23:23:31,166 [INFO] Loaded raw hardware CSV: /run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/hardware/new report hardware/final_dataset_ready(1).csv (8,370 rows)
+2026-09-29 23:23:31,166 [INFO] Original Columns: ['sample_index', 'expected_timestamp_ms', 'host_timestamp_ms', 'ir', 'red']
+2026-09-29 23:23:31,196 [INFO] Saved derived replay input to: /run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase6b_new_hardware/input/new_hardware_replay_input.csv (8,370 rows)
+2026-09-29 23:23:31,196 [INFO] 
+[STEP 2] Running Hardware Input Integrity Audit...
+2026-09-29 23:23:31,200 [INFO] Hardware Input Integrity Audit Results:
+2026-09-29 23:23:31,200 [INFO]   Rows:                 8,370
+2026-09-29 23:23:31,200 [INFO]   Sample Index Range:   218470 -> 302160 (Step: 10)
+2026-09-29 23:23:31,200 [INFO]   Index Discontinuity:  0
+2026-09-29 23:23:31,200 [INFO]   Host Duration:        83.880 s (Effective Rate: 99.773 Hz)
+2026-09-29 23:23:31,200 [INFO]   Host Jitter Bounds:   [9.0, 11.0] ms (Outside 9-11ms: 0)
+2026-09-29 23:23:31,200 [INFO]   IR Range:             [976, 231520] (Above 40k: 95.87%)
+2026-09-29 23:23:31,200 [INFO]   Red Channel Mean:     41.59 (Ambient/Inactive)
+2026-09-29 23:23:31,200 [INFO]   Audit Verdict:        PASS
+2026-09-29 23:23:31,200 [INFO] 
+[STEP 3] Loading Frozen Research Checkpoints & Phase 5C Calibration...
+2026-09-29 23:23:31,256 [INFO]   Phase 4A 1D CNN Parameters:     146,978
+2026-09-29 23:23:31,256 [INFO]   Phase 4B Causal GRU Parameters:  27,106
+2026-09-29 23:23:31,256 [INFO]   Total Neural Parameters:         174,084 (Trainable: 0)
+2026-09-29 23:23:31,323 [INFO]   Phase 5C post-hoc calibration loaded successfully.
+2026-09-29 23:23:31,323 [INFO] 
+[STEP 4] Executing Real-Time Streaming Replay Simulation...
+2026-09-29 23:23:31,462 [INFO]   Window 00 (0-10s): QC = WARN   | History Buffering (1/6)
+2026-09-29 23:23:31,484 [INFO]   Window 01 (10-20s): QC = PASS   | History Buffering (2/6)
+2026-09-29 23:23:31,507 [INFO]   Window 02 (20-30s): QC = PASS   | History Buffering (3/6)
+2026-09-29 23:23:31,528 [INFO]   Window 03 (30-40s): QC = PASS   | History Buffering (4/6)
+2026-09-29 23:23:31,555 [INFO]   Window 04 (40-50s): QC = PASS   | History Buffering (5/6)
+2026-09-29 23:23:31,598 [INFO]   Sequence 00 (0-60s, target hw_win_05): Status = WARN   | SBP = 150.66 mmHg (Cal: 151.43 [115.9-182.8]) | DBP = 84.30 mmHg (Cal: 87.95 [73.7-109.0])
+2026-09-29 23:23:31,625 [INFO]   Sequence 01 (10-70s, target hw_win_06): Status = PASS   | SBP = 148.74 mmHg (Cal: 149.16 [113.6-180.5]) | DBP = 85.34 mmHg (Cal: 88.25 [74.0-109.3])
+2026-09-29 23:23:31,649 [INFO]   Sequence 02 (20-80s, target hw_win_07): Status = PASS   | SBP = 145.38 mmHg (Cal: 143.19 [107.6-174.5]) | DBP = 84.51 mmHg (Cal: 87.95 [73.7-109.0])
+2026-09-29 23:23:31,661 [INFO] Saved window quality audit to: /run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase6b_new_hardware/diagnostics/new_hardware_window_quality.csv
+2026-09-29 23:23:31,663 [INFO] Saved replay predictions to: /run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase6b_new_hardware/predictions/new_hardware_replay_predictions.csv
+2026-09-29 23:23:31,663 [INFO] 
+[STEP 5] Benchmarking Host Streaming Performance...
+2026-09-29 23:23:31,663 [INFO]   Total Replay Time:        0.327 s (for 83.88s recording)
+2026-09-29 23:23:31,663 [INFO]   Mean Chunk Latency:       0.3894 ms (100 ms budget)
+2026-09-29 23:23:31,663 [INFO]   95th Percentile Latency:  0.3696 ms
+2026-09-29 23:23:31,664 [INFO]   Peak Maximum Latency:     96.7673 ms
+2026-09-29 23:23:31,664 [INFO]   Host Execution Headroom:  256.8x real-time speed
+2026-09-29 23:23:31,664 [INFO] 
+[STEP 6] Computing Model Prediction Summary Statistics...
+2026-09-29 23:23:31,665 [INFO]   Raw SBP:        Mean = 148.26 | Median = 148.74 | Min = 145.38 | Max = 150.66 | Std = 2.18
+2026-09-29 23:23:31,665 [INFO]   Raw DBP:        Mean = 84.72 | Median = 84.51 | Min = 84.30 | Max = 85.34 | Std = 0.45
+2026-09-29 23:23:31,665 [INFO]   Calibrated SBP: Mean = 147.92 | Median = 149.16 | Min = 143.19 | Max = 151.43 | Std = 3.48
+2026-09-29 23:23:31,665 [INFO]   Calibrated DBP: Mean = 88.05 | Median = 87.95 | Min = 87.95 | Max = 88.25 | Std = 0.14
+2026-09-29 23:23:31,665 [INFO] 
+[STEP 7] Generating Diagnostic Figures...
+2026-09-29 23:23:36,365 [INFO]   All 8 diagnostic figures successfully saved to figures/ directory.
+2026-09-29 23:23:36,365 [INFO] 
+[STEP 8] Compiling Formal Research Report...
+2026-09-29 23:23:36,368 [INFO] Report successfully saved to:
+  - /run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase6b_new_hardware/new_hardware_replay_report.md
+  - /run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase6b_new_hardware/reports/new_hardware_replay_report.md
+  - /run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase6b_new_hardware/new_hardware_replay_report_FINAL.md

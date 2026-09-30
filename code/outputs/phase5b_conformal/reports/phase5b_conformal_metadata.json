@@ -1,0 +1,132 @@
+{
+  "timestamp": "2026-09-18 14:57:22",
+  "experiment": "Phase 5B Post-Hoc Conformal BP Interval Calibration",
+  "trainable_parameters": 0,
+  "calibration_records": 607,
+  "calibration_sequences": 16298,
+  "audit_records": 608,
+  "audit_sequences": 15865,
+  "test_sequences": 31192,
+  "conformal_quantiles": {
+    "calibration_samples": 16298,
+    "epsilon": 1e-06,
+    "method_a_standard": {
+      "sbp_q90": 25.812171936035156,
+      "sbp_q95": 34.25286102294922,
+      "dbp_q90": 12.059150695800781,
+      "dbp_q95": 16.890579223632812
+    },
+    "method_b_uncertainty_scaled": {
+      "sbp_q90": 1.8073009252548218,
+      "sbp_q95": 2.3796114921569824,
+      "dbp_q90": 1.6295058727264404,
+      "dbp_q95": 2.252465009689331
+    }
+  },
+  "test_coverage": [
+    {
+      "method": "Standard Conformal (Method A)",
+      "target": "SBP",
+      "nominal_coverage": 90.0,
+      "empirical_coverage": 91.24775583482945,
+      "signed_coverage_error": 1.247755834829448,
+      "absolute_coverage_error": 1.247755834829448,
+      "mean_width_mmHg": 51.62434387207031,
+      "median_width_mmHg": 51.62434387207031,
+      "p90_width_mmHg": 51.62434387207031,
+      "lower_miss_rate_pct": 3.6483713772762245,
+      "upper_miss_rate_pct": 5.103872787894332
+    },
+    {
+      "method": "Standard Conformal (Method A)",
+      "target": "SBP",
+      "nominal_coverage": 95.0,
+      "empirical_coverage": 96.672223647089,
+      "signed_coverage_error": 1.6722236470889982,
+      "absolute_coverage_error": 1.6722236470889982,
+      "mean_width_mmHg": 68.50572204589844,
+      "median_width_mmHg": 68.50572204589844,
+      "p90_width_mmHg": 68.50572204589844,
+      "lower_miss_rate_pct": 1.3561169530648884,
+      "upper_miss_rate_pct": 1.9716593998461145
+    },
+    {
+      "method": "Standard Conformal (Method A)",
+      "target": "DBP",
+      "nominal_coverage": 90.0,
+      "empirical_coverage": 89.72492946909463,
+      "signed_coverage_error": -0.27507053090536715,
+      "absolute_coverage_error": 0.27507053090536715,
+      "mean_width_mmHg": 24.118301391601562,
+      "median_width_mmHg": 24.118301391601562,
+      "p90_width_mmHg": 24.118301391601562,
+      "lower_miss_rate_pct": 2.567966145165427,
+      "upper_miss_rate_pct": 7.7071043857399335
+    },
+    {
+      "method": "Standard Conformal (Method A)",
+      "target": "DBP",
+      "nominal_coverage": 95.0,
+      "empirical_coverage": 95.13977943062324,
+      "signed_coverage_error": 0.1397794306232356,
+      "absolute_coverage_error": 0.1397794306232356,
+      "mean_width_mmHg": 33.781158447265625,
+      "median_width_mmHg": 33.781158447265625,
+      "p90_width_mmHg": 33.781158447265625,
+      "lower_miss_rate_pct": 0.5866888945883559,
+      "upper_miss_rate_pct": 4.273531674788407
+    },
+    {
+      "method": "Uncertainty-Scaled (Method B)",
+      "target": "SBP",
+      "nominal_coverage": 90.0,
+      "empirical_coverage": 90.75724544755064,
+      "signed_coverage_error": 0.7572454475506447,
+      "absolute_coverage_error": 0.7572454475506447,
+      "mean_width_mmHg": 51.65161832691807,
+      "median_width_mmHg": 50.981714433689355,
+      "p90_width_mmHg": 64.89267303537936,
+      "lower_miss_rate_pct": 3.888817645550141,
+      "upper_miss_rate_pct": 5.3539369068992055
+    },
+    {
+      "method": "Uncertainty-Scaled (Method B)",
+      "target": "SBP",
+      "nominal_coverage": 95.0,
+      "empirical_coverage": 96.29071556809438,
+      "signed_coverage_error": 1.2907155680943845,
+      "absolute_coverage_error": 1.2907155680943845,
+      "mean_width_mmHg": 68.00792432611108,
+      "median_width_mmHg": 67.12588471627521,
+      "p90_width_mmHg": 85.44196948828642,
+      "lower_miss_rate_pct": 1.205437291613234,
+      "upper_miss_rate_pct": 2.5038471402923825
+    },
+    {
+      "method": "Uncertainty-Scaled (Method B)",
+      "target": "DBP",
+      "nominal_coverage": 90.0,
+      "empirical_coverage": 90.41741472172352,
+      "signed_coverage_error": 0.41741472172351735,
+      "absolute_coverage_error": 0.41741472172351735,
+      "mean_width_mmHg": 24.72234990452421,
+      "median_width_mmHg": 24.109510898389004,
+      "p90_width_mmHg": 31.21019843371143,
+      "lower_miss_rate_pct": 2.090279558861247,
+      "upper_miss_rate_pct": 7.492305719415235
+    },
+    {
+      "method": "Uncertainty-Scaled (Method B)",
+      "target": "DBP",
+      "nominal_coverage": 95.0,
+      "empirical_coverage": 95.47640420620672,
+      "signed_coverage_error": 0.4764042062067233,
+      "absolute_coverage_error": 0.4764042062067233,
+      "mean_width_mmHg": 34.17368973581214,
+      "median_width_mmHg": 33.32656273799243,
+      "p90_width_mmHg": 43.14183894272937,
+      "lower_miss_rate_pct": 0.2757117209540908,
+      "upper_miss_rate_pct": 4.247884072839189
+    }
+  ]
+}

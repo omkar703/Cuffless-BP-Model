@@ -1,0 +1,108 @@
+{
+  "timestamp": "2026-09-18 14:35:54",
+  "experiment": "Phase 5A Uncertainty Estimation via Monte Carlo Dropout",
+  "architecture": "TemporalGRUModel + MC-Dropout",
+  "trainable_parameters": 0,
+  "mc_passes": 30,
+  "dropout_p": 0.2,
+  "test_sequences": 31192,
+  "deterministic_verification": {
+    "sbp_mae": 10.5662202835083,
+    "dbp_mae": 5.5145769119262695,
+    "comb_mae": 8.040398597717285
+  },
+  "correlation_metrics": {
+    "sbp_pearson_r": 0.08063081376712679,
+    "sbp_spearman_rho": 0.08602916909683068,
+    "dbp_pearson_r": 0.1381561603436101,
+    "dbp_spearman_rho": 0.13361749729622066
+  },
+  "selective_prediction": [
+    {
+      "coverage_fraction": 1.0,
+      "coverage_pct": "100%",
+      "retained_samples": 31192,
+      "sbp_mae": 10.823312108021252,
+      "dbp_mae": 5.662490866411663,
+      "combined_mae": 8.242901487216459
+    },
+    {
+      "coverage_fraction": 0.9,
+      "coverage_pct": "90%",
+      "retained_samples": 28073,
+      "sbp_mae": 10.734807800739853,
+      "dbp_mae": 5.4333273731863745,
+      "combined_mae": 8.146289226273257
+    },
+    {
+      "coverage_fraction": 0.8,
+      "coverage_pct": "80%",
+      "retained_samples": 24954,
+      "sbp_mae": 10.619040603065168,
+      "dbp_mae": 5.315661928307627,
+      "combined_mae": 8.029345297471636
+    },
+    {
+      "coverage_fraction": 0.7,
+      "coverage_pct": "70%",
+      "retained_samples": 21834,
+      "sbp_mae": 10.465617173548667,
+      "dbp_mae": 5.235534252672192,
+      "combined_mae": 7.924951263644938
+    },
+    {
+      "coverage_fraction": 0.6,
+      "coverage_pct": "60%",
+      "retained_samples": 18715,
+      "sbp_mae": 10.293225211565646,
+      "dbp_mae": 5.145927759284628,
+      "combined_mae": 7.777662798125846
+    },
+    {
+      "coverage_fraction": 0.5,
+      "coverage_pct": "50%",
+      "retained_samples": 15596,
+      "sbp_mae": 10.146289692606722,
+      "dbp_mae": 5.090376242034502,
+      "combined_mae": 7.655501685688073
+    }
+  ],
+  "high_error_auc": [
+    {
+      "target": "SBP",
+      "error_threshold_mmHg": 10.0,
+      "positive_count": 12711,
+      "positive_rate": 0.4075083354706335,
+      "roc_auc": 0.5440103502421891,
+      "pr_auc": 0.4362152520372248,
+      "random_baseline_pr_auc": 0.4075083354706335
+    },
+    {
+      "target": "SBP",
+      "error_threshold_mmHg": 15.0,
+      "positive_count": 8051,
+      "positive_rate": 0.2581110541164401,
+      "roc_auc": 0.5460946373527935,
+      "pr_auc": 0.2827389561736505,
+      "random_baseline_pr_auc": 0.2581110541164401
+    },
+    {
+      "target": "DBP",
+      "error_threshold_mmHg": 10.0,
+      "positive_count": 4734,
+      "positive_rate": 0.15176968453449602,
+      "roc_auc": 0.6037656895882013,
+      "pr_auc": 0.22445173541641578,
+      "random_baseline_pr_auc": 0.15176968453449602
+    },
+    {
+      "target": "DBP",
+      "error_threshold_mmHg": 15.0,
+      "positive_count": 2106,
+      "positive_rate": 0.06751731213131572,
+      "roc_auc": 0.6149099938036197,
+      "pr_auc": 0.1138018436255871,
+      "random_baseline_pr_auc": 0.06751731213131572
+    }
+  ]
+}

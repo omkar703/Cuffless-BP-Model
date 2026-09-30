@@ -1,0 +1,29 @@
+{
+  "execution_timestamp_utc": "2026-09-30T11:55:18.471822+00:00",
+  "is_demo": false,
+  "demo_watermark": "NONE (PHYSICAL DATA)",
+  "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.43",
+  "python_version": "3.10.21",
+  "torch_version": "2.14.0+cu130",
+  "model_architecture": {
+    "phase4a_cnn": "PPGCNNBaseline (1D CNN, 3-channel, 146,978 parameters)",
+    "phase4b_gru": "1-Layer Unidirectional Causal GRU (hidden=64, 27,106 parameters)",
+    "total_parameters": 174084,
+    "trainable_parameters": 0,
+    "cnn_checkpoint": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase4a_single_model/checkpoints/best_model_ppg_vpg_apg.pt",
+    "cnn_checkpoint_sha256": "2c6c5478e5ec0c666cd2d5c43d7d2561c74ad25170f10075f24d2fa6610863ee",
+    "gru_checkpoint": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase4b_temporal_gru/checkpoints/best_temporal_gru.pt",
+    "gru_checkpoint_sha256": "26ecb0abf690bd067c5a083f80487e8f686c5c66ba49b9b84c7895fbaf8dcd81"
+  },
+  "phase5c_calibration": {
+    "isotonic_sbp": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase5c_extreme_aware/mappings/isotonic_sbp.pkl",
+    "isotonic_dbp": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase5c_extreme_aware/mappings/isotonic_dbp.pkl",
+    "conformal_quantiles": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase5c_extreme_aware/calibration/conformal_quantiles_by_bin.json"
+  },
+  "pairing_protocol": {
+    "rule": "NEAREST_PREDICTION_TIMESTAMP",
+    "tolerance_seconds": 15.0,
+    "exclude_warn_windows": false
+  },
+  "disclaimer": "RESEARCH APPLICATION ONLY \u2014 NOT A MEDICAL DEVICE. This software executes offline validation of frozen neural research models on physical PPG recordings. No neural network parameters are trained, fine-tuned, or updated. Predictions do not establish medical accuracy or clinical validity and must not be used for diagnosis or treatment."
+}

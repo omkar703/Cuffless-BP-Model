@@ -1,0 +1,6 @@
+Send these files/results for review:
+1. hardware_inspection_report.txt
+2. hardware_inspection_report.json
+3. raw_ir_corrected.png
+4. raw_ir_last60s.png
+5. The original CSV filename and row count

@@ -1,0 +1,62 @@
+{
+  "chunk_1": {
+    "chunk_size": 1,
+    "output_length": 1250,
+    "expected_length": 1250,
+    "max_absolute_error": 0.0,
+    "mean_absolute_error": 0.0,
+    "rmse": 0.0,
+    "pearson_r": 1.0,
+    "status": "PASS"
+  },
+  "chunk_7": {
+    "chunk_size": 7,
+    "output_length": 1250,
+    "expected_length": 1250,
+    "max_absolute_error": 0.0,
+    "mean_absolute_error": 0.0,
+    "rmse": 0.0,
+    "pearson_r": 1.0,
+    "status": "PASS"
+  },
+  "chunk_16": {
+    "chunk_size": 16,
+    "output_length": 1250,
+    "expected_length": 1250,
+    "max_absolute_error": 0.0,
+    "mean_absolute_error": 0.0,
+    "rmse": 0.0,
+    "pearson_r": 1.0,
+    "status": "PASS"
+  },
+  "chunk_32": {
+    "chunk_size": 32,
+    "output_length": 1250,
+    "expected_length": 1250,
+    "max_absolute_error": 0.0,
+    "mean_absolute_error": 0.0,
+    "rmse": 0.0,
+    "pearson_r": 1.0,
+    "status": "PASS"
+  },
+  "chunk_100": {
+    "chunk_size": 100,
+    "output_length": 1250,
+    "expected_length": 1250,
+    "max_absolute_error": 0.0,
+    "mean_absolute_error": 0.0,
+    "rmse": 0.0,
+    "pearson_r": 1.0,
+    "status": "PASS"
+  },
+  "chunk_137": {
+    "chunk_size": 137,
+    "output_length": 1250,
+    "expected_length": 1250,
+    "max_absolute_error": 0.0,
+    "mean_absolute_error": 0.0,
+    "rmse": 0.0,
+    "pearson_r": 1.0,
+    "status": "PASS"
+  }
+}

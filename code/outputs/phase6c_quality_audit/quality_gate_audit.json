@@ -1,0 +1,75 @@
+{
+  "session_id": "01_20260930_001106",
+  "sample_count": 14130,
+  "duration_s": 141.546,
+  "window_qc": {
+    "PASS": 7,
+    "REJECT": 5,
+    "WARN": 2
+  },
+  "rejected_windows": {
+    "win_00": "Insufficient pulsatile cycles (2 peaks detected)",
+    "win_06": "Insufficient pulsatile cycles (1 peaks detected)",
+    "win_07": "Insufficient pulsatile cycles (1 peaks detected)",
+    "win_12": "Insufficient pulsatile cycles (1 peaks detected)",
+    "win_13": "Insufficient pulsatile cycles (2 peaks detected)"
+  },
+  "warn_windows": {
+    "win_08": "High baseline wander/drift (169708 counts)",
+    "win_09": "Borderline heart rate (23.2 bpm)"
+  },
+  "sequence_summary": {
+    "total_formed": 9,
+    "pass_count": 0,
+    "warn_count": 0,
+    "rejected_count": 9
+  },
+  "pairing_audit": [
+    {
+      "event_id": "2",
+      "reference_elapsed_s": 67.6382617,
+      "reference_sbp": 120.0,
+      "reference_dbp": 80.0,
+      "nearest_prediction_id": "pred_01",
+      "prediction_elapsed_s": 70.0,
+      "pairing_delta_s": 2.415,
+      "target_window": "win_06",
+      "target_window_status": "REJECT",
+      "sequence_window_ids": "win_01, win_02, win_03, win_04, win_05, win_06",
+      "sequence_window_qc": "PASS, PASS, PASS, PASS, PASS, REJECT",
+      "sequence_status": "REJECTED_SIGNAL_QUALITY",
+      "model_raw_sbp": NaN,
+      "unconstrained_sbp": 154.43003845214844,
+      "included_in_metrics": false,
+      "exclusion_reason": "POOR_PPG_QUALITY_REJECTED"
+    },
+    {
+      "event_id": "5",
+      "reference_elapsed_s": 125.5498357,
+      "reference_sbp": 120.0,
+      "reference_dbp": 80.0,
+      "nearest_prediction_id": "pred_07",
+      "prediction_elapsed_s": 130.0,
+      "pairing_delta_s": 4.504,
+      "target_window": "win_12",
+      "target_window_status": "REJECT",
+      "sequence_window_ids": "win_07, win_08, win_09, win_10, win_11, win_12",
+      "sequence_window_qc": "REJECT, WARN, WARN, PASS, PASS, REJECT",
+      "sequence_status": "REJECTED_SIGNAL_QUALITY",
+      "model_raw_sbp": NaN,
+      "unconstrained_sbp": 166.9003448486328,
+      "included_in_metrics": false,
+      "exclusion_reason": "POOR_PPG_QUALITY_REJECTED"
+    }
+  ],
+  "timestamp_audit": {
+    "mean_interval_ms": 10.018118762828225,
+    "median_interval_ms": 10.0,
+    "device_step_ms": 10.0,
+    "device_discontinuities": 0,
+    "sample_index_modal_step": 1,
+    "nature_of_jitter": "Host PC serial receive buffering (device hardware clock is strictly 10.0 ms)"
+  },
+  "root_cause_classification": "A. TRUE SIGNAL QUALITY FAILURE",
+  "root_cause_explanation": "The subject removed their finger from the MAX30102 sensor immediately when reference BP results were recorded (at t = 68.5s and t = 127.3s), dropping optical amplitude into dark noise (~1,400 counts). This created 4 rejected windows (win_06, win_07, win_12, win_13). Combined with an initial placement step transient in win_00, every single 60-second rolling context sequence contained at least one rejected window, correctly triggering sequence rejection."
+}

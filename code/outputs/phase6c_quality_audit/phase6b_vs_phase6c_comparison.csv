@@ -1,0 +1,24 @@
+element_type,element_id,phase6b_status,phase6c_status,phase6b_reason,phase6c_reason,status_match,phase6b_sbp,phase6c_sbp,phase6b_dbp,phase6c_dbp,prediction_match
+WINDOW,win_00,REJECT,REJECT,Insufficient pulsatile cycles (2 peaks detected),Insufficient pulsatile cycles (2 peaks detected),True,,,,,True
+WINDOW,win_01,PASS,PASS,Valid pulsatile morphology within physiological bounds,Valid pulsatile morphology within physiological bounds,True,,,,,True
+WINDOW,win_02,PASS,PASS,Valid pulsatile morphology within physiological bounds,Valid pulsatile morphology within physiological bounds,True,,,,,True
+WINDOW,win_03,PASS,PASS,Valid pulsatile morphology within physiological bounds,Valid pulsatile morphology within physiological bounds,True,,,,,True
+WINDOW,win_04,PASS,PASS,Valid pulsatile morphology within physiological bounds,Valid pulsatile morphology within physiological bounds,True,,,,,True
+WINDOW,win_05,PASS,PASS,Valid pulsatile morphology within physiological bounds,Valid pulsatile morphology within physiological bounds,True,,,,,True
+WINDOW,win_06,REJECT,REJECT,Insufficient pulsatile cycles (1 peaks detected),Insufficient pulsatile cycles (1 peaks detected),True,,,,,True
+WINDOW,win_07,REJECT,REJECT,Insufficient pulsatile cycles (1 peaks detected),Insufficient pulsatile cycles (1 peaks detected),True,,,,,True
+WINDOW,win_08,WARN,WARN,High baseline wander/drift (169708 counts),High baseline wander/drift (169708 counts),True,,,,,True
+WINDOW,win_09,WARN,WARN,Borderline heart rate (23.2 bpm),Borderline heart rate (23.2 bpm),True,,,,,True
+WINDOW,win_10,PASS,PASS,Valid pulsatile morphology within physiological bounds,Valid pulsatile morphology within physiological bounds,True,,,,,True
+WINDOW,win_11,PASS,PASS,Valid pulsatile morphology within physiological bounds,Valid pulsatile morphology within physiological bounds,True,,,,,True
+WINDOW,win_12,REJECT,REJECT,Insufficient pulsatile cycles (1 peaks detected),Insufficient pulsatile cycles (1 peaks detected),True,,,,,True
+WINDOW,win_13,REJECT,REJECT,Insufficient pulsatile cycles (2 peaks detected),Insufficient pulsatile cycles (2 peaks detected),True,,,,,True
+SEQUENCE,seq_00,REJECTED_SIGNAL_QUALITY,REJECTED_SIGNAL_QUALITY,Context contains REJECT window(s): win_00: Insufficient pulsatile cycles (2 peaks detected),REJECTED_SIGNAL_QUALITY,True,,,,,True
+SEQUENCE,seq_01,REJECTED_SIGNAL_QUALITY,REJECTED_SIGNAL_QUALITY,Context contains REJECT window(s): win_06: Insufficient pulsatile cycles (1 peaks detected),REJECTED_SIGNAL_QUALITY,True,,,,,True
+SEQUENCE,seq_02,REJECTED_SIGNAL_QUALITY,REJECTED_SIGNAL_QUALITY,"Context contains REJECT window(s): win_06: Insufficient pulsatile cycles (1 peaks detected), win_07: Insufficient pulsatile cycles (1 peaks detected)",REJECTED_SIGNAL_QUALITY,True,,,,,True
+SEQUENCE,seq_03,REJECTED_SIGNAL_QUALITY,REJECTED_SIGNAL_QUALITY,"Context contains REJECT window(s): win_06: Insufficient pulsatile cycles (1 peaks detected), win_07: Insufficient pulsatile cycles (1 peaks detected)",REJECTED_SIGNAL_QUALITY,True,,,,,True
+SEQUENCE,seq_04,REJECTED_SIGNAL_QUALITY,REJECTED_SIGNAL_QUALITY,"Context contains REJECT window(s): win_06: Insufficient pulsatile cycles (1 peaks detected), win_07: Insufficient pulsatile cycles (1 peaks detected)",REJECTED_SIGNAL_QUALITY,True,,,,,True
+SEQUENCE,seq_05,REJECTED_SIGNAL_QUALITY,REJECTED_SIGNAL_QUALITY,"Context contains REJECT window(s): win_06: Insufficient pulsatile cycles (1 peaks detected), win_07: Insufficient pulsatile cycles (1 peaks detected)",REJECTED_SIGNAL_QUALITY,True,,,,,True
+SEQUENCE,seq_06,REJECTED_SIGNAL_QUALITY,REJECTED_SIGNAL_QUALITY,"Context contains REJECT window(s): win_06: Insufficient pulsatile cycles (1 peaks detected), win_07: Insufficient pulsatile cycles (1 peaks detected)",REJECTED_SIGNAL_QUALITY,True,,,,,True
+SEQUENCE,seq_07,REJECTED_SIGNAL_QUALITY,REJECTED_SIGNAL_QUALITY,"Context contains REJECT window(s): win_07: Insufficient pulsatile cycles (1 peaks detected), win_12: Insufficient pulsatile cycles (1 peaks detected)",REJECTED_SIGNAL_QUALITY,True,,,,,True
+SEQUENCE,seq_08,REJECTED_SIGNAL_QUALITY,REJECTED_SIGNAL_QUALITY,"Context contains REJECT window(s): win_12: Insufficient pulsatile cycles (1 peaks detected), win_13: Insufficient pulsatile cycles (2 peaks detected)",REJECTED_SIGNAL_QUALITY,True,,,,,True

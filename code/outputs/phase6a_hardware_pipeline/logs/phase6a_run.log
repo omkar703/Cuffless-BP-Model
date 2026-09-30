@@ -1,0 +1,108 @@
+=== Phase 6A Execution Log (2026-09-29 21:30:51) ===
+================================================================================
+  PHASE 6A: MAX30102 HARDWARE-TO-MODEL PIPELINE VALIDATION
+  Target: Calibration-Free Cuffless BP Estimation (PPG Only)
+================================================================================
+
+[STEP 1] Locating and Auditing Hardware Data...
+Selected hardware source file: /run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/hardware/final_dataset_ready.csv
+Raw shape: (9601, 4), columns: ['sample_index', 'timestamp_ms', 'ir', 'red']
+Saved immutable raw capture copy -> /run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase6a_hardware_pipeline/processed/hardware_100hz_raw.csv
+
+==============================================================================
+            HARDWARE ACQUISITION INTEGRITY CHECK
+==============================================================================
+#   | Audit Item                           | Measured Value             | Status
+------------------------------------------------------------------------------
+1   | Total samples                        | 9,601                      | [PASS]
+2   | First sample index                   | 0                          | [PASS]
+3   | Last sample index                    | 9600                       | [PASS]
+4   | Index discontinuities                | 0                          | [PASS]
+5   | Expected interval                    | 10.0 ms (100 Hz)           | [PASS]
+6   | Mean interval                        | 10.0217 ms (99.78 Hz)      | [PASS]
+7   | Median interval                      | 10.0000 ms                 | [PASS]
+8   | Minimum interval                     | 10.0000 ms                 | [PASS]
+9   | Maximum interval                     | 11.0000 ms                 | [PASS]
+10  | Total recording duration             | 96.21 s                    | [PASS]
+11  | IR range & stats (min/max/mean/sd)   | 52522 / 201551 / 198378.7 / 6264.0 | [PASS]
+12  | Red LED stats (ambient check)        | 11 / 70 / 41.8 / 7.9       | [PASS]
+13  | Fraction IR > 40,000 counts          | 100.00%                    | [PASS]
+14  | Fraction IR == 0 counts              | 0.00%                      | [PASS]
+15  | Fraction duplicate IR counts         | 55.88% (ADC quantization)  | [PASS]
+16  | NaN or Inf values                    | NaN=False, Inf=False       | [PASS]
+17  | Duplicate sample indices             | False                      | [PASS]
+18  | Missing sample indices               | 0                          | [PASS]
+==============================================================================
+
+[STEP 2] Performing Polyphase Resampling (100 Hz -> 125 Hz)...
+Resampling completed in 1.06 ms
+Input: 9601 samples @ 100 Hz -> Output: 12002 samples @ 125 Hz (96.016 s)
+
+[STEP 3] Executing Dual DSP Pipelines (Research-Reference vs Causal-Proxy)...
+Continuous filtering completed: Path A (filtfilt) = 1.71 ms | Path B (sosfilt) = 1.88 ms
+
+[STEP 4] Extracting 10-Second Windows (1250 Samples @ 125 Hz, 0% Overlap)...
+Total available full 10-second windows: 9 (covering 90.0 s of recording)
+Windows extracted: Ref tensor shape = (9, 3, 1250), Causal tensor shape = (9, 3, 1250)
+Window Quality Breakdown: PASS = 8, WARN = 1, REJECT = 0
+
+[STEP 5] Comparing Research-Reference vs Causal-Proxy Channels...
+  Channel PPG  | Pearson r: 0.7203 | Mean Win r: 0.7203 | RMSE (z-score): 0.7480 | MAD: 0.5446 | SD Diff: 0.7480
+  Channel VPG  | Pearson r: 0.6208 | Mean Win r: 0.6208 | RMSE (z-score): 0.8709 | MAD: 0.6052 | SD Diff: 0.8709
+  Channel APG  | Pearson r: 0.1870 | Mean Win r: 0.1870 | RMSE (z-score): 1.2752 | MAD: 0.8588 | SD Diff: 1.2752
+
+[STEP 6] Formulating 60-Second Sequences & Running Frozen Model Inference...
+Total valid 60-second causal sequences: 4
+Frozen Model Parameters: CNN = 146,978, GRU = 27,106 | Total = 174,084 (Trainable: 0)
+Phase 5C post-hoc calibration artifacts loaded successfully.
+
+======================================================================
+       MODEL OUTPUT STABILITY COMPARISON (RESEARCH vs CAUSAL)
+======================================================================
+Target: SBP | Ref Pred: 140.76 mmHg | Causal Pred: 140.81 mmHg | MAD Diff: 4.53 mmHg | Rel Diff: 3.21% | Pearson r: -0.766
+Target: DBP | Ref Pred: 79.15 mmHg | Causal Pred: 83.30 mmHg | MAD Diff: 4.14 mmHg | Rel Diff: 5.23% | Pearson r: 0.637
+======================================================================
+
+[STEP 7] Simulating Streaming Rolling Inference (1-Second Stride)...
+Simulating 37 rolling 60-second causal inference steps...
+
+[STEP 8] Measuring Pipeline Execution Latency...
+Latency Audit (CPU):
+  - Polyphase Resampling (10s window): 0.17 ms
+  - Causal DSP (filter + derivatives + norm): 0.19 ms
+  - 1D CNN Encoder (1 window): 0.84 ms
+  - Causal GRU Sequence Inference: 0.23 ms
+  - Total Pipeline Latency per 10s step: 1.44 ms
+  - Real-Time Processing Headroom: 6956.6x real-time speed
+  - Processing Throughput: 869,575 samples/sec
+
+[STEP 9] Generating Signal and Model Visualization Figures...
+All 8 figures successfully generated and saved to outputs/figures/.
+
+[STEP 11] Writing Technical Research Report & Evidence Freeze...
+Reports successfully generated:
+  - /run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase6a_hardware_pipeline/reports/PHASE6A_HARDWARE_PIPELINE_REPORT.md
+  - /run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase6a_hardware_pipeline/reports/PHASE6A_HARDWARE_EVIDENCE_FREEZE.md
+
+==============================================================================
+        PHASE 6A HARDWARE-TO-MODEL SMOKE TEST VERIFICATION
+==============================================================================
+1. Sample indices understood: YES (0 to 9600)
+2. Sampling rate ~100 Hz: YES (10.02 ms avg interval)
+3. No unexpected index gaps: YES (0 discontinuities)
+4. Resampled signal is finite: YES (12,002 samples @ 125 Hz, no NaN/Inf)
+5. Filtered signal is finite: YES (both Ref and Causal finite)
+6. VPG is finite: YES (shape [1250], no NaN/Inf)
+7. APG is finite: YES (shape [1250], no NaN/Inf)
+8. Window shape = [3, 1250]: YES
+9. Sequence shape = [6, 3, 1250]: YES
+10. Phase 4B model accepts sequence: YES
+11. SBP/DBP outputs are finite: YES (SBP=140.92, DBP=78.68)
+12. Model parameters require gradients: NO (Trainable: 0)
+==============================================================================
+
+PHASE 6A HARDWARE-TO-MODEL SMOKE TEST PASSED
+
+==============================================================================
+PHASE 6A HARDWARE PIPELINE VALIDATED — READY FOR REAL-TIME DEPLOYMENT TESTING
+==============================================================================

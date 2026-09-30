@@ -1,0 +1,3 @@
+event_id,reference_elapsed_s,reference_sbp,reference_dbp,nearest_prediction_id,prediction_elapsed_s,pairing_delta_s,target_window,target_window_status,sequence_window_ids,sequence_window_qc,sequence_status,model_raw_sbp,unconstrained_sbp,included_in_metrics,exclusion_reason
+2,67.6382617,120.0,80.0,pred_01,70.0,2.415,win_06,REJECT,"win_01, win_02, win_03, win_04, win_05, win_06","PASS, PASS, PASS, PASS, PASS, REJECT",REJECTED_SIGNAL_QUALITY,,154.43003845214844,False,POOR_PPG_QUALITY_REJECTED
+5,125.5498357,120.0,80.0,pred_07,130.0,4.504,win_12,REJECT,"win_07, win_08, win_09, win_10, win_11, win_12","REJECT, WARN, WARN, PASS, PASS, REJECT",REJECTED_SIGNAL_QUALITY,,166.9003448486328,False,POOR_PPG_QUALITY_REJECTED

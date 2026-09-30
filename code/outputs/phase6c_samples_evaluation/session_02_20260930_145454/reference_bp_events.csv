@@ -1,0 +1,3 @@
+event_id,host_timestamp_ms,elapsed_s,event_type,label,sbp,dbp,notes
+1,1790760379920,85.6712329,EVENTTYPE.REFERENCE_BP_START,Reference BP,,,Cuff measurement started
+2,1790760477722,183.4730341,EVENTTYPE.REFERENCE_BP_RESULT,Reference BP,120.0,80.0,nan

@@ -1,0 +1,368 @@
+{
+  "dataset_name": "Phase 7 Reliability Research Dataset",
+  "total_rows": 63355,
+  "split_counts": {
+    "test": 31192,
+    "dev": 16298,
+    "val": 15865
+  },
+  "columns": {
+    "prediction_id": {
+      "dtype": "object",
+      "domain": "Identification / Partition",
+      "min": null,
+      "max": null,
+      "null_count": 0
+    },
+    "sequence_id": {
+      "dtype": "int64",
+      "domain": "Identification / Partition",
+      "min": 0.0,
+      "max": 32162.0,
+      "null_count": 0
+    },
+    "record_id": {
+      "dtype": "object",
+      "domain": "Identification / Partition",
+      "min": null,
+      "max": null,
+      "null_count": 0
+    },
+    "target_window_id": {
+      "dtype": "object",
+      "domain": "Identification / Partition",
+      "min": null,
+      "max": null,
+      "null_count": 0
+    },
+    "target_window_index": {
+      "dtype": "int64",
+      "domain": "Identification / Partition",
+      "min": 5.0,
+      "max": 58.0,
+      "null_count": 0
+    },
+    "split": {
+      "dtype": "object",
+      "domain": "Identification / Partition",
+      "min": null,
+      "max": null,
+      "null_count": 0
+    },
+    "target_sbp": {
+      "dtype": "float64",
+      "domain": "Ground Truth Targets",
+      "min": 71.3185,
+      "max": 197.61641,
+      "null_count": 0
+    },
+    "target_dbp": {
+      "dtype": "float64",
+      "domain": "Ground Truth Targets",
+      "min": 50.425102,
+      "max": 138.18648,
+      "null_count": 0
+    },
+    "pred_raw_sbp": {
+      "dtype": "float32",
+      "domain": "Frozen Point Predictions",
+      "min": 80.4837646484375,
+      "max": 175.79269409179688,
+      "null_count": 0
+    },
+    "pred_raw_dbp": {
+      "dtype": "float32",
+      "domain": "Frozen Point Predictions",
+      "min": 49.65220260620117,
+      "max": 92.37073516845703,
+      "null_count": 0
+    },
+    "pred_cal_sbp": {
+      "dtype": "float32",
+      "domain": "Frozen Point Predictions",
+      "min": 86.113525390625,
+      "max": 185.20220947265625,
+      "null_count": 0
+    },
+    "pred_cal_dbp": {
+      "dtype": "float32",
+      "domain": "Frozen Point Predictions",
+      "min": 52.84275817871094,
+      "max": 109.3014907836914,
+      "null_count": 0
+    },
+    "sbp_error_raw": {
+      "dtype": "float64",
+      "domain": "Prediction Errors",
+      "min": -71.80826885498047,
+      "max": 67.47054012695313,
+      "null_count": 0
+    },
+    "dbp_error_raw": {
+      "dtype": "float64",
+      "domain": "Prediction Errors",
+      "min": -73.21838776489258,
+      "max": 26.535210033691406,
+      "null_count": 0
+    },
+    "sbp_error_cal": {
+      "dtype": "float64",
+      "domain": "Prediction Errors",
+      "min": -70.18949080810546,
+      "max": 64.80915866210937,
+      "null_count": 0
+    },
+    "dbp_error_cal": {
+      "dtype": "float64",
+      "domain": "Prediction Errors",
+      "min": -72.34761826416016,
+      "max": 27.69202460888672,
+      "null_count": 0
+    },
+    "abs_sbp_error_raw": {
+      "dtype": "float64",
+      "domain": "Prediction Errors",
+      "min": 0.00013551757811569587,
+      "max": 71.80826885498047,
+      "null_count": 0
+    },
+    "abs_dbp_error_raw": {
+      "dtype": "float64",
+      "domain": "Prediction Errors",
+      "min": 3.3208007792495664e-06,
+      "max": 73.21838776489258,
+      "null_count": 0
+    },
+    "abs_sbp_error_cal": {
+      "dtype": "float64",
+      "domain": "Prediction Errors",
+      "min": 2.4414063659605745e-08,
+      "max": 70.18949080810546,
+      "null_count": 0
+    },
+    "abs_dbp_error_cal": {
+      "dtype": "float64",
+      "domain": "Prediction Errors",
+      "min": 1.1791992449161626e-07,
+      "max": 72.34761826416016,
+      "null_count": 0
+    },
+    "high_error_sbp_10": {
+      "dtype": "int64",
+      "domain": "Research High-Error Labels",
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "high_error_sbp_15": {
+      "dtype": "int64",
+      "domain": "Research High-Error Labels",
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "high_error_dbp_10": {
+      "dtype": "int64",
+      "domain": "Research High-Error Labels",
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "high_error_dbp_15": {
+      "dtype": "int64",
+      "domain": "Research High-Error Labels",
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "high_error_composite_10": {
+      "dtype": "int64",
+      "domain": "Research High-Error Labels",
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "high_error_composite_15": {
+      "dtype": "int64",
+      "domain": "Research High-Error Labels",
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "ppg_quality_status": {
+      "dtype": "object",
+      "domain": "Signal Quality Indicators",
+      "min": null,
+      "max": null,
+      "null_count": 0
+    },
+    "qc_pass": {
+      "dtype": "int64",
+      "domain": "Signal Quality Indicators",
+      "min": 0.0,
+      "max": 1.0,
+      "null_count": 0
+    },
+    "ppg_ptp": {
+      "dtype": "float64",
+      "domain": "Signal Quality Indicators",
+      "min": 0.3186705767350928,
+      "max": 4.001955034213099,
+      "null_count": 0
+    },
+    "ppg_std": {
+      "dtype": "float64",
+      "domain": "Signal Quality Indicators",
+      "min": 0.0889431754220443,
+      "max": 0.9410586964954476,
+      "null_count": 0
+    },
+    "ppg_clipped_fraction": {
+      "dtype": "float64",
+      "domain": "Signal Quality Indicators",
+      "min": 0.0008,
+      "max": 0.0376,
+      "null_count": 0
+    },
+    "ppg_pulse_count": {
+      "dtype": "int64",
+      "domain": "Signal Quality Indicators",
+      "min": 8.0,
+      "max": 37.0,
+      "null_count": 0
+    },
+    "estimated_hr_bpm": {
+      "dtype": "float64",
+      "domain": "Signal Quality Indicators",
+      "min": 48.701298701298704,
+      "max": 227.27272727272725,
+      "null_count": 0
+    },
+    "sbp_uncertainty": {
+      "dtype": "float64",
+      "domain": "Epistemic Uncertainty",
+      "min": 6.331953,
+      "max": 26.97533416748047,
+      "null_count": 0
+    },
+    "dbp_uncertainty": {
+      "dtype": "float64",
+      "domain": "Epistemic Uncertainty",
+      "min": 3.4821496,
+      "max": 16.015263,
+      "null_count": 0
+    },
+    "sbp_conformal_width_90": {
+      "dtype": "float32",
+      "domain": "Conformal Bounds",
+      "min": 41.040428161621094,
+      "max": 57.273963928222656,
+      "null_count": 0
+    },
+    "sbp_conformal_width_95": {
+      "dtype": "float32",
+      "domain": "Conformal Bounds",
+      "min": 55.60911560058594,
+      "max": 66.8739242553711,
+      "null_count": 0
+    },
+    "dbp_conformal_width_90": {
+      "dtype": "float32",
+      "domain": "Conformal Bounds",
+      "min": 12.678260803222656,
+      "max": 27.791458129882812,
+      "null_count": 0
+    },
+    "dbp_conformal_width_95": {
+      "dtype": "float32",
+      "domain": "Conformal Bounds",
+      "min": 16.44335174560547,
+      "max": 35.290061950683594,
+      "null_count": 0
+    },
+    "rolling_sbp_mean_3": {
+      "dtype": "float32",
+      "domain": "Causal Temporal Stability",
+      "min": 86.113525390625,
+      "max": 185.20220947265625,
+      "null_count": 0
+    },
+    "rolling_sbp_std_3": {
+      "dtype": "float32",
+      "domain": "Causal Temporal Stability",
+      "min": 0.0,
+      "max": 20.806324005126953,
+      "null_count": 0
+    },
+    "rolling_dbp_mean_3": {
+      "dtype": "float32",
+      "domain": "Causal Temporal Stability",
+      "min": 53.80146408081055,
+      "max": 109.3014907836914,
+      "null_count": 0
+    },
+    "rolling_dbp_std_3": {
+      "dtype": "float32",
+      "domain": "Causal Temporal Stability",
+      "min": 0.0,
+      "max": 14.402159690856934,
+      "null_count": 0
+    },
+    "rolling_sbp_std_6": {
+      "dtype": "float32",
+      "domain": "Causal Temporal Stability",
+      "min": 0.0,
+      "max": 20.806324005126953,
+      "null_count": 0
+    },
+    "rolling_dbp_std_6": {
+      "dtype": "float32",
+      "domain": "Causal Temporal Stability",
+      "min": 0.0,
+      "max": 14.271370887756348,
+      "null_count": 0
+    },
+    "max_abs_sbp_jump_3": {
+      "dtype": "float32",
+      "domain": "Causal Temporal Stability",
+      "min": 0.0,
+      "max": 34.850059509277344,
+      "null_count": 0
+    },
+    "max_abs_dbp_jump_3": {
+      "dtype": "float32",
+      "domain": "Causal Temporal Stability",
+      "min": 0.0,
+      "max": 20.73682403564453,
+      "null_count": 0
+    },
+    "median_abs_sbp_change_3": {
+      "dtype": "float32",
+      "domain": "Causal Temporal Stability",
+      "min": 0.0,
+      "max": 18.559017181396484,
+      "null_count": 0
+    },
+    "median_abs_dbp_change_3": {
+      "dtype": "float32",
+      "domain": "Causal Temporal Stability",
+      "min": 0.0,
+      "max": 18.628952026367188,
+      "null_count": 0
+    },
+    "sbp_trend_slope_3": {
+      "dtype": "float32",
+      "domain": "Causal Temporal Stability",
+      "min": -18.559017181396484,
+      "max": 16.577102661132812,
+      "null_count": 0
+    },
+    "dbp_trend_slope_3": {
+      "dtype": "float32",
+      "domain": "Causal Temporal Stability",
+      "min": -16.656333923339844,
+      "max": 13.773292541503906,
+      "null_count": 0
+    }
+  }
+}

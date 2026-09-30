@@ -1,0 +1,7 @@
+interval_bin,count,percentage
+0 ms (Duplicate timestamp),6,0.04246585037865383
+1–8 ms (USB burst receive),2416,17.099582419137942
+9–11 ms (Nominal ±1ms),11122,78.71753131856465
+12–20 ms (Minor thread delay),227,1.60662467265907
+21–50 ms (OS thread swap),87,0.6157548304904806
+>50 ms (Severe host delay),271,1.918040908769198

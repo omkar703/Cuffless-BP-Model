@@ -1,0 +1,61 @@
+{
+  "input_file": "C:\\Users\\pc\\Desktop\\final_dataset_4.csv",
+  "rows": 8370,
+  "columns": [
+    "sample_index",
+    "timestamp_ms",
+    "ir",
+    "red"
+  ],
+  "sample_index": {
+    "first": 218470.0,
+    "last": 302160.0,
+    "median_step": 10.0,
+    "modal_step": 10.0,
+    "expected_step_used_for_check": 10.0,
+    "discontinuities_vs_modal_step": 0,
+    "duplicate_or_reverse_steps": 0,
+    "inferred_interval_ms_if_index_is_ms": 10.0,
+    "inferred_rate_hz_if_index_is_ms": 100.0
+  },
+  "host_timing": {
+    "source_column": "timestamp_ms",
+    "mean_interval_ms": 10.022702831879556,
+    "median_interval_ms": 10.0,
+    "min_interval_ms": 9.0,
+    "max_interval_ms": 11.0,
+    "duration_s": 83.88,
+    "effective_rate_hz": 99.7734859322842,
+    "intervals_outside_9_to_11_ms": 0
+  },
+  "ir": {
+    "mean": 166837.80238948626,
+    "median": 172336.5,
+    "min": 976.0,
+    "max": 231520.0,
+    "std": 35849.176622061554,
+    "percent_above_40000": 95.86618876941458,
+    "zeros": 0,
+    "nan_or_inf": 0
+  },
+  "red": {
+    "mean": 41.59462365591398,
+    "median": 42.0,
+    "min": 0.0,
+    "max": 73.0,
+    "std": 9.260063832394001,
+    "zeros": 5,
+    "nan_or_inf": 0
+  },
+  "verdict": {
+    "timing_pass": true,
+    "input_csv_modified": false,
+    "notes": [
+      "No rows are deleted by this script.",
+      "expected_timestamp_ms is not used as the source of truth.",
+      "sample_index is checked against its observed modal step, not assumed to increment by 1.",
+      "Host timestamp timing is used for the primary 100-Hz acquisition check when available.",
+      "A timing pass does not establish BP accuracy or clinical validity."
+    ]
+  }
+}

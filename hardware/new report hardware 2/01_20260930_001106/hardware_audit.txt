@@ -1,0 +1,29 @@
+PHASE 6C HARDWARE CAPTURE AUDIT
+==================================================
+sample_count: 14130
+duration_s: 141.546
+sample_index_first: 2128.0
+sample_index_last: 16257.0
+sample_index_modal_step: 1.0
+sample_index_discontinuities: 0
+duplicate_or_reverse_steps: 0
+host_mean_interval_ms: 10.018118762828225
+host_median_interval_ms: 10.0
+host_min_interval_ms: 0.0
+host_max_interval_ms: 146.0
+effective_rate_hz: 99.81914006753989
+host_intervals_outside_9_to_11_ms: 3007
+ir_mean: 127561.58747346072
+ir_median: 161957.5
+ir_min: 842.0
+ir_max: 220243.0
+ir_std: 71829.8142547463
+ir_zeros: 0
+ir_nan_inf: 0
+red_mean: 41.316772823779196
+red_min: 0.0
+red_max: 100.0
+red_zeros: 8
+red_nan_inf: 0
+
+Engineering data-integrity audit only. No BP accuracy claim.

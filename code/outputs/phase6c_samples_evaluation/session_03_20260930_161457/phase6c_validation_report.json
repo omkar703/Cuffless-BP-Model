@@ -1,0 +1,258 @@
+{
+  "metadata": {
+    "execution_timestamp_utc": "2026-09-30T11:55:15.349572+00:00",
+    "is_demo": false,
+    "demo_watermark": "NONE (PHYSICAL DATA)",
+    "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.43",
+    "python_version": "3.10.21",
+    "torch_version": "2.14.0+cu130",
+    "model_architecture": {
+      "phase4a_cnn": "PPGCNNBaseline (1D CNN, 3-channel, 146,978 parameters)",
+      "phase4b_gru": "1-Layer Unidirectional Causal GRU (hidden=64, 27,106 parameters)",
+      "total_parameters": 174084,
+      "trainable_parameters": 0,
+      "cnn_checkpoint": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase4a_single_model/checkpoints/best_model_ppg_vpg_apg.pt",
+      "cnn_checkpoint_sha256": "2c6c5478e5ec0c666cd2d5c43d7d2561c74ad25170f10075f24d2fa6610863ee",
+      "gru_checkpoint": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase4b_temporal_gru/checkpoints/best_temporal_gru.pt",
+      "gru_checkpoint_sha256": "26ecb0abf690bd067c5a083f80487e8f686c5c66ba49b9b84c7895fbaf8dcd81"
+    },
+    "phase5c_calibration": {
+      "isotonic_sbp": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase5c_extreme_aware/mappings/isotonic_sbp.pkl",
+      "isotonic_dbp": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase5c_extreme_aware/mappings/isotonic_dbp.pkl",
+      "conformal_quantiles": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/code/outputs/phase5c_extreme_aware/calibration/conformal_quantiles_by_bin.json"
+    },
+    "pairing_protocol": {
+      "rule": "NEAREST_PREDICTION_TIMESTAMP",
+      "tolerance_seconds": 15.0,
+      "exclude_warn_windows": false
+    },
+    "disclaimer": "RESEARCH APPLICATION ONLY \u2014 NOT A MEDICAL DEVICE. This software executes offline validation of frozen neural research models on physical PPG recordings. No neural network parameters are trained, fine-tuned, or updated. Predictions do not establish medical accuracy or clinical validity and must not be used for diagnosis or treatment."
+  },
+  "session_info": {
+    "session_id": "03",
+    "source_type": "ZIP",
+    "source_name": "uploaded.zip",
+    "row_count": 13768,
+    "bp_events_count": 2
+  },
+  "hardware_audit": {
+    "dataset_filename": "03_20260930_161457.zip",
+    "row_count": 13768,
+    "sample_index": {
+      "first": 53493.0,
+      "last": 67260.0,
+      "modal_step": 1.0,
+      "discontinuities_vs_modal_step": 0,
+      "duplicate_or_reverse_steps": 0,
+      "inferred_interval_ms": 10.0,
+      "inferred_nominal_rate_hz": 100.0
+    },
+    "host_timing": {
+      "mean_interval_ms": 10.03174257281906,
+      "median_interval_ms": 10.0,
+      "min_interval_ms": 1.0,
+      "max_interval_ms": 204.0,
+      "std_interval_ms": 14.9436148258873,
+      "duration_s": 138.107,
+      "effective_rate_hz": 99.683578674506,
+      "intervals_outside_9_11_ms": 4605,
+      "percent_outside_9_11_ms": 33.44955327958161
+    },
+    "ir_signal": {
+      "mean": 224282.17562463685,
+      "median": 224414.5,
+      "min": 205624.0,
+      "max": 232107.0,
+      "std": 2889.6526981308507,
+      "zeros": 0,
+      "nan_or_inf": 0,
+      "percent_above_40k": 100.0
+    },
+    "red_signal": {
+      "mean": 41.934485764090645,
+      "median": 42.0,
+      "min": 13.0,
+      "max": 77.0,
+      "std": 8.30570092116999,
+      "zeros": 0
+    },
+    "audit_verdict": "WARN",
+    "failure_reasons": [],
+    "warning_reasons": [
+      "4605 host intervals (33.4%) outside 9\u201311 ms",
+      "Red channel mean is low (41.9 counts); indicates ambient/single-wavelength mode"
+    ]
+  },
+  "replay_execution": {
+    "total_samples_processed": 13768,
+    "total_windows_formed": 13,
+    "window_qc_counts": {
+      "PASS": 13,
+      "WARN": 0,
+      "REJECT": 0
+    },
+    "total_sequences_formed": 8,
+    "total_predictions_generated": 8,
+    "replay_duration_seconds": 0.4934394640000619,
+    "mean_chunk_latency_ms": 0.3568888591146767,
+    "p95_chunk_latency_ms": 0.32872760000373097,
+    "peak_chunk_latency_ms": 82.09561899991513,
+    "host_budget_headroom_x": 280.19927617821116
+  },
+  "pairing_audit": {
+    "rule_name": "NEAREST_PREDICTION_TIMESTAMP",
+    "tolerance_seconds": 15.0,
+    "exclude_warn_windows": false,
+    "total_bp_events_recorded": 2,
+    "total_reference_results": 1,
+    "matched_pairs_count": 1,
+    "included_pairs_count": 1,
+    "unmatched_count": 0,
+    "excluded_count": 0
+  },
+  "validation_metrics": {
+    "n_valid_matched_pairs": 1,
+    "raw": {
+      "sbp": {
+        "target": "SBP_RAW",
+        "n": 1,
+        "mae": 20.146392822265625,
+        "rmse": 20.146392822265625,
+        "bias_mean_error": 20.146392822265625,
+        "std_error": 0.0,
+        "r2": NaN,
+        "pearson_r": NaN,
+        "pearson_p": NaN,
+        "spearman_rho": NaN,
+        "spearman_p": NaN,
+        "abs_error_quantiles": {
+          "p25": 20.146392822265625,
+          "median_p50": 20.146392822265625,
+          "p75": 20.146392822265625,
+          "p90": 20.146392822265625,
+          "p95": 20.146392822265625,
+          "max": 20.146392822265625
+        },
+        "bhs_grades": {
+          "percent_le_5mmHg": 0.0,
+          "percent_le_10mmHg": 0.0,
+          "percent_le_15mmHg": 0.0
+        },
+        "aami_compliant": false
+      },
+      "dbp": {
+        "target": "DBP_RAW",
+        "n": 1,
+        "mae": 0.5328521728515625,
+        "rmse": 0.5328521728515625,
+        "bias_mean_error": 0.5328521728515625,
+        "std_error": 0.0,
+        "r2": NaN,
+        "pearson_r": NaN,
+        "pearson_p": NaN,
+        "spearman_rho": NaN,
+        "spearman_p": NaN,
+        "abs_error_quantiles": {
+          "p25": 0.5328521728515625,
+          "median_p50": 0.5328521728515625,
+          "p75": 0.5328521728515625,
+          "p90": 0.5328521728515625,
+          "p95": 0.5328521728515625,
+          "max": 0.5328521728515625
+        },
+        "bhs_grades": {
+          "percent_le_5mmHg": 100.0,
+          "percent_le_10mmHg": 100.0,
+          "percent_le_15mmHg": 100.0
+        },
+        "aami_compliant": false
+      }
+    },
+    "calibrated": {
+      "sbp": {
+        "target": "SBP_CALIBRATED",
+        "n": 1,
+        "mae": 18.643402099609375,
+        "rmse": 18.643402099609375,
+        "bias_mean_error": 18.643402099609375,
+        "std_error": 0.0,
+        "r2": NaN,
+        "pearson_r": NaN,
+        "pearson_p": NaN,
+        "spearman_rho": NaN,
+        "spearman_p": NaN,
+        "abs_error_quantiles": {
+          "p25": 18.643402099609375,
+          "median_p50": 18.643402099609375,
+          "p75": 18.643402099609375,
+          "p90": 18.643402099609375,
+          "p95": 18.643402099609375,
+          "max": 18.643402099609375
+        },
+        "bhs_grades": {
+          "percent_le_5mmHg": 0.0,
+          "percent_le_10mmHg": 0.0,
+          "percent_le_15mmHg": 0.0
+        },
+        "aami_compliant": false
+      },
+      "dbp": {
+        "target": "DBP_CALIBRATED",
+        "n": 1,
+        "mae": 1.0047988891601562,
+        "rmse": 1.0047988891601562,
+        "bias_mean_error": 1.0047988891601562,
+        "std_error": 0.0,
+        "r2": NaN,
+        "pearson_r": NaN,
+        "pearson_p": NaN,
+        "spearman_rho": NaN,
+        "spearman_p": NaN,
+        "abs_error_quantiles": {
+          "p25": 1.0047988891601562,
+          "median_p50": 1.0047988891601562,
+          "p75": 1.0047988891601562,
+          "p90": 1.0047988891601562,
+          "p95": 1.0047988891601562,
+          "max": 1.0047988891601562
+        },
+        "bhs_grades": {
+          "percent_le_5mmHg": 100.0,
+          "percent_le_10mmHg": 100.0,
+          "percent_le_15mmHg": 100.0
+        },
+        "aami_compliant": false
+      }
+    },
+    "stratified": {
+      "sbp_subgroups": {
+        "<120 mmHg (Normotensive)": {
+          "n": 0,
+          "status": "Insufficient samples (N < 2)"
+        },
+        "120-139 mmHg (Elevated/Stage 1)": {
+          "n": 1,
+          "status": "Insufficient samples (N < 2)"
+        },
+        ">=140 mmHg (Stage 2/Hypertensive)": {
+          "n": 0,
+          "status": "Insufficient samples (N < 2)"
+        }
+      },
+      "dbp_subgroups": {
+        "<60 mmHg (Low)": {
+          "n": 0,
+          "status": "Insufficient samples (N < 2)"
+        },
+        "60-79 mmHg (Normal)": {
+          "n": 0,
+          "status": "Insufficient samples (N < 2)"
+        },
+        ">=80 mmHg (Elevated/Stage 1+)": {
+          "n": 1,
+          "status": "Insufficient samples (N < 2)"
+        }
+      }
+    }
+  }
+}

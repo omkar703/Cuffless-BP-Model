@@ -1,0 +1,3 @@
+target,interval_1.0_sigma_empirical_coverage_pct,interval_1.0_sigma_mean_width_mmHg,interval_1.96_sigma_empirical_coverage_pct,interval_1.96_sigma_mean_width_mmHg,interpretation
+SBP,71.893434213901,28.579421384976918,92.48845857912286,56.01566591455475,Heuristic interval coverage (epistemic dropout proxy; not calibrated confidence interval)
+DBP,75.47448063606052,15.171683060060271,93.56886381123365,29.736498797718134,Heuristic interval coverage (epistemic dropout proxy; not calibrated confidence interval)

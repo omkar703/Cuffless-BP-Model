@@ -1,0 +1,4 @@
+model_type,roc_auc,pr_auc,brier_score,accuracy_50pct,sbp_mae_100cov,sbp_mae_80cov,sbp_gain_80cov,dbp_mae_100cov,dbp_mae_80cov,dbp_gain_80cov
+rule_based,0.5608,0.4955,0.2849,0.5554,10.73,10.58,0.15,5.66,5.54,0.12
+logistic,0.5975,0.5243,0.2418,0.5727,10.73,10.3,0.43,5.66,5.45,0.21
+hist_gb,0.6226,0.5521,0.2418,0.5915,10.73,10.04,0.69,5.66,5.42,0.24

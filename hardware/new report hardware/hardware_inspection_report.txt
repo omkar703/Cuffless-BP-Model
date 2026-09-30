@@ -1,0 +1,50 @@
+========================================================================
+MAX30102 HARDWARE CAPTURE INSPECTION
+========================================================================
+Input: final_dataset_4.csv
+Rows: 8370
+
+--- SAMPLE INDEX ---
+First: 218470
+Last:  302160
+Median step: 10.000
+Modal step:  10.000
+Discontinuities vs modal step: 0
+Duplicate/reverse steps: 0
+Inferred interval (if index units are ms): 10.000 ms
+Inferred rate (if index units are ms): 100.000 Hz
+
+--- HOST TIMING ---
+Source column: timestamp_ms
+Mean interval:   10.023 ms
+Median interval: 10.000 ms
+Min interval:    9.000 ms
+Max interval:    11.000 ms
+Duration:        83.880 s
+Effective rate:  99.773 Hz
+Intervals outside 9–11 ms: 0
+
+--- IR SIGNAL ---
+Mean: 166837.80
+Median: 172336.50
+Min: 976.00
+Max: 231520.00
+Std: 35849.18
+Above 40,000 counts: 95.87%
+Zeros: 0
+NaN/Inf: 0
+
+--- RED CHANNEL ---
+Mean: 41.59
+Median: 42.00
+Min: 0.00
+Max: 73.00
+Std: 9.26
+Zeros: 5
+NaN/Inf: 0
+
+--- VERDICT ---
+Primary host-timing check: PASS
+Raw input CSV modified: NO
+
+Do not use this report as evidence of BP accuracy or clinical validity.

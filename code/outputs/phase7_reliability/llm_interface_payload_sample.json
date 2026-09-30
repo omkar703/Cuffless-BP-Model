@@ -1,0 +1,20 @@
+{
+  "prediction": {
+    "sbp": 136.9,
+    "dbp": 87.9
+  },
+  "reliability_state": "TRUST",
+  "reliability_score": 0.5142,
+  "reliability_reasons": [
+    "Optical waveform signal quality verified (PASS).",
+    "Elevated model uncertainty (SBP sigma=16.5 mmHg, DBP sigma=8.8 mmHg).",
+    "Conformal prediction interval is wide (61.9 mmHg) reflecting extreme-range variance.",
+    "Rolling 60-second temporal predictions show strong stability."
+  ],
+  "signal_quality": "PASS",
+  "model_uncertainty": "ELEVATED",
+  "conformal_width": "WIDE",
+  "temporal_stability": "STABLE",
+  "recommendation": "Reliable prediction meeting consistency and quality criteria.",
+  "disclaimer": "Research reliability indicator \u2014 not a medical diagnosis or guarantee of BP accuracy."
+}

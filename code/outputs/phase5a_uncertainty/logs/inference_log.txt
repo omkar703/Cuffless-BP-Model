@@ -1,0 +1,1 @@
+MC-Dropout Inference Complete: 31192 sequences, 30 passes, elapsed=6.88s

@@ -1,0 +1,48 @@
+{
+  "dataset_filename": "02_20260930_145454.zip",
+  "row_count": 18722,
+  "sample_index": {
+    "first": 1594.0,
+    "last": 20315.0,
+    "modal_step": 1.0,
+    "discontinuities_vs_modal_step": 0,
+    "duplicate_or_reverse_steps": 0,
+    "inferred_interval_ms": 10.0,
+    "inferred_nominal_rate_hz": 100.0
+  },
+  "host_timing": {
+    "mean_interval_ms": 10.02179370760109,
+    "median_interval_ms": 10.0,
+    "min_interval_ms": 0.0,
+    "max_interval_ms": 166.0,
+    "std_interval_ms": 9.253584080846213,
+    "duration_s": 187.618,
+    "effective_rate_hz": 99.78253685680478,
+    "intervals_outside_9_11_ms": 3680,
+    "percent_outside_9_11_ms": 19.657069600982854
+  },
+  "ir_signal": {
+    "mean": 181536.3453690845,
+    "median": 182695.0,
+    "min": 163435.0,
+    "max": 184476.0,
+    "std": 3534.1787406315407,
+    "zeros": 0,
+    "nan_or_inf": 0,
+    "percent_above_40k": 100.0
+  },
+  "red_signal": {
+    "mean": 41.63299861125948,
+    "median": 42.0,
+    "min": 12.0,
+    "max": 73.0,
+    "std": 8.511362587865936,
+    "zeros": 0
+  },
+  "audit_verdict": "WARN",
+  "failure_reasons": [],
+  "warning_reasons": [
+    "3680 host intervals (19.7%) outside 9\u201311 ms",
+    "Red channel mean is low (41.6 counts); indicates ambient/single-wavelength mode"
+  ]
+}

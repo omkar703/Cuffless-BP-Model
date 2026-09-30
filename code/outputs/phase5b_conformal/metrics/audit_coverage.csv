@@ -1,0 +1,9 @@
+subset,method,target,nominal,empirical_coverage,mean_width_mmHg
+Audit,Standard Conformal (Method A),SBP,90.0,90.72171446580523,51.62434387207031
+Audit,Standard Conformal (Method A),SBP,95.0,96.5521588402143,68.50572204589844
+Audit,Uncertainty-Scaled (Method B),SBP,90.0,90.91080995902931,51.958133697509766
+Audit,Uncertainty-Scaled (Method B),SBP,95.0,96.4513079104948,68.41150665283203
+Audit,Standard Conformal (Method A),DBP,90.0,91.69870784746297,24.118301391601562
+Audit,Standard Conformal (Method A),DBP,95.0,96.42609517806491,33.781158447265625
+Audit,Uncertainty-Scaled (Method B),DBP,90.0,92.49921210211156,24.546079635620117
+Audit,Uncertainty-Scaled (Method B),DBP,95.0,96.70343523479357,33.930030822753906

@@ -1,0 +1,19 @@
+{
+  "app_version": "Phase6C-FriendCapture-1.0.0",
+  "session_id": "01",
+  "subject_code": "manthan",
+  "operator": "admin",
+  "notes": "",
+  "capture_start_utc": "2026-09-29T18:41:06.554983+00:00",
+  "serial_port": "COM3",
+  "baud": 921600,
+  "synchronization_clock": "host_timestamp_ms is the shared timestamp for PPG samples and operator events; host_monotonic_ns is stored for local timing diagnostics.",
+  "raw_samples_filtered": false,
+  "raw_samples_deleted": false,
+  "model_inference_performed": false,
+  "capture_stop_utc": "2026-09-29T18:43:28.184702+00:00",
+  "capture_stop_epoch_ms": 1790707408184,
+  "sample_count": 14130,
+  "event_count": 5,
+  "reader_error": null
+}

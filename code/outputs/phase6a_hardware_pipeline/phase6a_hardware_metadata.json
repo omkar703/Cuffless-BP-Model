@@ -1,0 +1,98 @@
+{
+  "phase": "PHASE_6A",
+  "description": "MAX30102 Hardware-to-Model Pipeline Validation",
+  "timestamp": "2026-09-29 21:30:56",
+  "hardware_source_file": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/hardware/final_dataset_ready.csv",
+  "total_hardware_samples": 9601,
+  "raw_sampling_rate_hz": 99.78380176284716,
+  "nominal_sampling_rate_hz": 100.0,
+  "resampled_sampling_rate_hz": 125.0,
+  "resampling_method": "scipy.signal.resample_poly(up=5, down=4)",
+  "resampled_sample_count": 12002,
+  "recording_duration_seconds": 96.208,
+  "dsp_paths": {
+    "path_a": "Research-Reference (Zero-phase filtfilt 0.5-8.0 Hz, np.gradient)",
+    "path_b": "Causal Deployment Proxy (Stateful sosfilt 0.5-8.0 Hz, backward finite differences)"
+  },
+  "window_duration_seconds": 10.0,
+  "window_samples": 1250,
+  "total_windows": 9,
+  "qc_summary": {
+    "pass": 8,
+    "warn": 1,
+    "reject": 0
+  },
+  "sequence_duration_seconds": 60.0,
+  "sequence_window_count": 6,
+  "total_causal_sequences": 4,
+  "model_architecture": {
+    "cnn_backbone": "Phase 4A PPGCNNBaseline (146,978 params, FROZEN)",
+    "temporal_recurrent": "Phase 4B TemporalGRUModel (27,106 params, FROZEN)",
+    "total_parameters": 174084,
+    "trainable_parameters": 0
+  },
+  "channel_comparisons": [
+    {
+      "channel": "PPG",
+      "overall_pearson_r": 0.7202555537223816,
+      "overall_pearson_p": 0.0,
+      "overall_spearman_rho": 0.7128717446579497,
+      "mean_window_pearson_r": 0.7202554941177368,
+      "rmse_zscore": 0.7479899525642395,
+      "mean_absolute_difference": 0.5446255207061768,
+      "std_difference": 0.7479899525642395
+    },
+    {
+      "channel": "VPG",
+      "overall_pearson_r": 0.6207693815231323,
+      "overall_pearson_p": 0.0,
+      "overall_spearman_rho": 0.6426774096935057,
+      "mean_window_pearson_r": 0.6207693815231323,
+      "rmse_zscore": 0.8708968162536621,
+      "mean_absolute_difference": 0.605247974395752,
+      "std_difference": 0.8708968162536621
+    },
+    {
+      "channel": "APG",
+      "overall_pearson_r": 0.1869860142469406,
+      "overall_pearson_p": 4.752006199598165e-89,
+      "overall_spearman_rho": 0.25258179364806455,
+      "mean_window_pearson_r": 0.1869860142469406,
+      "rmse_zscore": 1.2751580476760864,
+      "mean_absolute_difference": 0.8587754964828491,
+      "std_difference": 1.2751580476760864
+    }
+  ],
+  "prediction_path_comparisons": [
+    {
+      "target": "SBP",
+      "mean_reference_pred_mmHg": 140.7634506225586,
+      "mean_causal_pred_mmHg": 140.81260681152344,
+      "mad_difference_mmHg": 4.529975891113281,
+      "rmse_difference_mmHg": 5.340722037083597,
+      "mean_bias_difference_mmHg": 0.04915618896484375,
+      "relative_pct_difference": 3.2121599928592666,
+      "pearson_r": -0.7656106785050588,
+      "spearman_rho": -0.39999999999999997
+    },
+    {
+      "target": "DBP",
+      "mean_reference_pred_mmHg": 79.15301322937012,
+      "mean_causal_pred_mmHg": 83.2950267791748,
+      "mad_difference_mmHg": 4.1420135498046875,
+      "rmse_difference_mmHg": 4.3507797344751165,
+      "mean_bias_difference_mmHg": 4.1420135498046875,
+      "relative_pct_difference": 5.22925619758181,
+      "pearson_r": 0.6371038386619678,
+      "spearman_rho": 0.39999999999999997
+    }
+  ],
+  "latency_audit_cpu_ms": {
+    "resampling_per_window": 0.174624360006419,
+    "causal_dsp_per_window": 0.19202152001525974,
+    "cnn_encoder_per_window": 0.8396156799972232,
+    "gru_sequence_inference": 0.23122267999497126,
+    "total_latency_per_step": 1.4374842400138732,
+    "throughput_samples_per_sec": 869574.7509467903
+  }
+}

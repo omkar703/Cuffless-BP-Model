@@ -1,0 +1,142 @@
+{
+  "source_file": "/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone/hardware/final_dataset_ready.csv",
+  "total_samples": 9601,
+  "first_index": 0,
+  "last_index": 9600,
+  "index_discontinuities": 0,
+  "mean_interval_ms": 10.021666666666667,
+  "median_interval_ms": 10.0,
+  "min_interval_ms": 10.0,
+  "max_interval_ms": 11.0,
+  "effective_sampling_rate_hz": 99.78380176284716,
+  "duration_seconds": 96.208,
+  "ir_stats": {
+    "min": 52522.0,
+    "max": 201551.0,
+    "mean": 198378.72013331944,
+    "std": 6264.0111753987685
+  },
+  "red_stats": {
+    "min": 11.0,
+    "max": 70.0,
+    "mean": 41.813665243203836,
+    "std": 7.8997207698548575
+  },
+  "fraction_ir_gt_40k": 1.0,
+  "fraction_ir_zero": 0.0,
+  "fraction_ir_duplicate": 0.5587959587542964,
+  "has_nan": false,
+  "has_inf": false,
+  "duplicate_indices": false,
+  "missing_indices": 0,
+  "audit_table": [
+    {
+      "item": 1,
+      "check": "Total samples",
+      "value": "9,601",
+      "status": "PASS"
+    },
+    {
+      "item": 2,
+      "check": "First sample index",
+      "value": "0",
+      "status": "PASS"
+    },
+    {
+      "item": 3,
+      "check": "Last sample index",
+      "value": "9600",
+      "status": "PASS"
+    },
+    {
+      "item": 4,
+      "check": "Index discontinuities",
+      "value": "0",
+      "status": "PASS"
+    },
+    {
+      "item": 5,
+      "check": "Expected interval",
+      "value": "10.0 ms (100 Hz)",
+      "status": "PASS"
+    },
+    {
+      "item": 6,
+      "check": "Mean interval",
+      "value": "10.0217 ms (99.78 Hz)",
+      "status": "PASS"
+    },
+    {
+      "item": 7,
+      "check": "Median interval",
+      "value": "10.0000 ms",
+      "status": "PASS"
+    },
+    {
+      "item": 8,
+      "check": "Minimum interval",
+      "value": "10.0000 ms",
+      "status": "PASS"
+    },
+    {
+      "item": 9,
+      "check": "Maximum interval",
+      "value": "11.0000 ms",
+      "status": "PASS"
+    },
+    {
+      "item": 10,
+      "check": "Total recording duration",
+      "value": "96.21 s",
+      "status": "PASS"
+    },
+    {
+      "item": 11,
+      "check": "IR range & stats (min/max/mean/sd)",
+      "value": "52522 / 201551 / 198378.7 / 6264.0",
+      "status": "PASS"
+    },
+    {
+      "item": 12,
+      "check": "Red LED stats (ambient check)",
+      "value": "11 / 70 / 41.8 / 7.9",
+      "status": "PASS"
+    },
+    {
+      "item": 13,
+      "check": "Fraction IR > 40,000 counts",
+      "value": "100.00%",
+      "status": "PASS"
+    },
+    {
+      "item": 14,
+      "check": "Fraction IR == 0 counts",
+      "value": "0.00%",
+      "status": "PASS"
+    },
+    {
+      "item": 15,
+      "check": "Fraction duplicate IR counts",
+      "value": "55.88% (ADC quantization)",
+      "status": "PASS"
+    },
+    {
+      "item": 16,
+      "check": "NaN or Inf values",
+      "value": "NaN=False, Inf=False",
+      "status": "PASS"
+    },
+    {
+      "item": 17,
+      "check": "Duplicate sample indices",
+      "value": "False",
+      "status": "PASS"
+    },
+    {
+      "item": 18,
+      "check": "Missing sample indices",
+      "value": "0",
+      "status": "PASS"
+    }
+  ]
+}

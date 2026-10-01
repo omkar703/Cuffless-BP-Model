@@ -4,7 +4,7 @@
 [![PyTorch 2.0+](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.30+-FF4B4B.svg)](https://streamlit.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Status: Complete](https://img.shields.io/badge/Status-Complete%20(Phases%201--7)-brightgreen.svg)]()
+[![Status: Complete](<https://img.shields.io/badge/Status-Complete%20(Phases%201--7)-brightgreen.svg>)]()
 
 > **Final Capstone Research Project**  
 > An end-to-end deep learning framework, causal DSP pipeline, extreme-aware conformal uncertainty calibrator, and deterministic multi-domain reliability engine for continuous, non-invasive, calibration-free blood pressure estimation from raw optical photoplethysmography (PPG) signals.
@@ -12,6 +12,7 @@
 ---
 
 ## Table of Contents
+
 1. [Clinical & Engineering Motivation](#clinical--engineering-motivation)
 2. [End-to-End System Architecture](#end-to-end-system-architecture)
 3. [Scientific Phases Breakdown](#scientific-phases-breakdown)
@@ -35,11 +36,13 @@
 ## Clinical & Engineering Motivation
 
 Hypertension is the leading preventable cause of cardiovascular mortality worldwide. Traditional cuff-based oscillometric sphygmomanometers suffer from fundamental clinical constraints:
+
 - **Intermittent Acquisition**: Miss nocturnal dipping, episodic surges, and transient hemodynamic instability.
 - **Discomfort & Sleep Fragmentation**: Repeated cuff inflations cause arousals, perturbing autonomic nervous system regulation.
 - **White-Coat Hypertension**: Anxiety induced by physical cuff inflation inflates clinical readings.
 
 While optical Photoplethysmography (PPG) offers continuous, unobtrusive arterial pulse monitoring from consumer wearables, **calibration-free cuffless estimation** has remained an open challenge due to:
+
 1. High individual arterial compliance divergence.
 2. Hydrostatic pressure changes and sensor contact pressure variation.
 3. Severe regression-to-mean in neural networks when predicting hypertensive and hypotensive crises.
@@ -115,17 +118,20 @@ This project delivers a **frozen, calibration-free research pipeline** that reso
 ## Scientific Phases Breakdown
 
 ### Phase 1 & 2: Dataset Hygiene & Quality Control
+
 - **Benchmark Corpus**: UCI Machine Learning Repository Cuff-Less Blood Pressure Dataset derived from PhysioNet MIMIC-II (12,000 records).
 - **Leakage Prevention**: Enforces strict **Record-Level Subject-Disjoint Partitions** (Training, Validation, and Test partitions share zero subjects).
 - **Quality Manifest**: Causal rejection of motion artifacts, sensor decoupling, baseline saturation, and non-physiological arterial pulse dynamics.
 
 ### Phase 3: Tabular Baselines & Physiological Features
+
 - Engineered 28 handcrafted physiological pulse biomarkers:
   - Systolic time ($T_s$), Diastolic time ($T_d$), Crest time, Pulse interval ($T_p$).
   - Area under curve ($A_s$, $A_d$), Inflection index, Augmentation index, Reflection index, Stiffness index.
 - Established benchmark baselines across Ridge Regression, Random Forest, XGBoost, and LightGBM.
 
 ### Phase 4A: Spatial Representation Learning (Deep 1D-CNN)
+
 - 4-Block Deep 1D Convolutional Neural Network processing 3 aligned channels:
   1. **PPG**: Filtered optical pulsatile blood volume.
   2. **VPG** (Velocity Plethysmogram): First derivative reflecting pulse upstroke velocity.
@@ -133,22 +139,26 @@ This project delivers a **frozen, calibration-free research pipeline** that reso
 - Compresses each 10-second window ($3 \times 1250$) into a rich 64-dimensional feature embedding.
 
 ### Phase 4B: Temporal Hemodynamic Dynamics (Sequence GRU)
+
 - A single 10-second pulse window cannot capture autonomic drift or baroreflex vasomotor adjustments.
 - Phase 4B feeds **6 consecutive 10-second window embeddings** (60 seconds of causal context) into a 2-layer Recurrent Neural Network (GRU, 64 hidden units).
 - Significantly reduces prediction variance and improves temporal continuity.
 
 ### Phase 5: Uncertainty Quantification & Conformal Calibration
+
 - **Phase 5A (Monte Carlo Dropout)**: Epistemic uncertainty estimation via stochastic forward passes with dropout ($p=0.2$) enabled at test time.
 - **Phase 5B (Split Conformal Prediction)**: Provides mathematically guaranteed distribution-free 95% prediction intervals $[y_{\text{lower}}, y_{\text{upper}}]$.
 - **Phase 5C (Extreme-Aware Calibration)**: Segmented isotonic calibration addressing systematic under-prediction of hypertension ($\text{SBP} > 140\text{ mmHg}$) and over-prediction of hypotension ($\text{SBP} < 90\text{ mmHg}$).
 
 ### Phase 6: Causal Real-Time Hardware Streaming (ESP32 + MAX30102)
+
 - Microcontroller firmware acquiring raw red and infrared optical pulses at $100\text{ Hz}$.
 - Stateful rational polyphase resampler ($100\text{ Hz} \to 125\text{ Hz}$, $M=5, N=4$).
 - Causal 3rd-order Butterworth SOS bandpass filter ($0.5–8.0\text{ Hz}$) with zero future access and zero phase distortion.
 - Backward finite difference calculation for VPG and APG in real time.
 
 ### Phase 7: Deterministic Multi-Domain Reliability Engine
+
 - Deterministic gating engine evaluating 4 independent reliability domains:
   1. Optical Signal Quality ($Q_{\text{signal}}$).
   2. Epistemic Model Dispersion ($\sigma_{\text{MC}}$).
@@ -164,16 +174,17 @@ This project delivers a **frozen, calibration-free research pipeline** that reso
 
 ## Research Performance & Evidence
 
-| Stage / Model | SBP MAE (mmHg) | SBP Std (mmHg) | DBP MAE (mmHg) | DBP Std (mmHg) | BHS Grade | AAMI Criteria |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Phase 3A (Ridge Baseline)** | 14.82 | 18.24 | 8.41 | 11.20 | C | Failed |
-| **Phase 3B (XGBoost Tabular)** | 11.35 | 14.62 | 6.78 | 8.91 | B | Failed |
-| **Phase 4A (Spatial 1D-CNN)** | 7.92 | 10.34 | 4.88 | 6.54 | B | Borderline |
-| **Phase 4B (60s Temporal GRU)** | 5.84 | 7.62 | 3.71 | 4.95 | A | **Passed** |
-| **Phase 5C (Extreme-Aware Calibrated)**| **5.21** | **6.88** | **3.34** | **4.41** | **A** | **Passed** |
-| **Phase 7 (Selective Prediction @ 75% Coverage)** | **3.94** | **5.12** | **2.62** | **3.48** | **A+** | **Passed (Superior)** |
+| Stage / Model                                     | SBP MAE (mmHg) | SBP Std (mmHg) | DBP MAE (mmHg) | DBP Std (mmHg) | BHS Grade |     AAMI Criteria     |
+| :------------------------------------------------ | :------------: | :------------: | :------------: | :------------: | :-------: | :-------------------: |
+| **Phase 3A (Ridge Baseline)**                     |     14.82      |     18.24      |      8.41      |     11.20      |     C     |        Failed         |
+| **Phase 3B (XGBoost Tabular)**                    |     11.35      |     14.62      |      6.78      |      8.91      |     B     |        Failed         |
+| **Phase 4A (Spatial 1D-CNN)**                     |      7.92      |     10.34      |      4.88      |      6.54      |     B     |      Borderline       |
+| **Phase 4B (60s Temporal GRU)**                   |      5.84      |      7.62      |      3.71      |      4.95      |     A     |      **Passed**       |
+| **Phase 5C (Extreme-Aware Calibrated)**           |    **5.21**    |    **6.88**    |    **3.34**    |    **4.41**    |   **A**   |      **Passed**       |
+| **Phase 7 (Selective Prediction @ 75% Coverage)** |    **3.94**    |    **5.12**    |    **2.62**    |    **3.48**    |  **A+**   | **Passed (Superior)** |
 
-*Model Checksum Fingerprints (Strictly Frozen):*
+_Model Checksum Fingerprints (Strictly Frozen):_
+
 - **Phase 4A CNN**: `2c6c5478e5ec0c666cd2d5c43d7d2561c74ad25170f10075f24d2fa6610863ee`
 - **Phase 4B GRU**: `26ecb0abf690bd067c5a083f80487e8f686c5c66ba49b9b84c7895fbaf8dcd81`
 - **Phase 7 Engine**: `fe8ecd804848abcbb1125167991a1a61a14efaf5c49e13260fa8e39505616c4a`
@@ -189,6 +200,7 @@ streamlit run code/phase6c_app/app.py
 ```
 
 ### Modes of Operation:
+
 1. **Guided Demo Mode**:
    - An 8-step interactive narrative designed for academic evaluators and professors.
    - Explains the raw optical signal, quality screening, derivative feature extraction, 60s temporal progression, deep inference, conformal bounds, and reliability triage step-by-step.
@@ -205,15 +217,17 @@ streamlit run code/phase6c_app/app.py
 To acquire physical pulse data using the MAX30102 sensor and an ESP32 microcontroller:
 
 ### Wiring Pinout:
-| MAX30102 Sensor Pin | ESP32 GPIO Pin | Description |
-| :--- | :--- | :--- |
-| **VIN** | **3.3V** | 3.3V Power Supply |
-| **GND** | **GND** | Ground |
-| **SDA** | **GPIO 21** | I2C Data Line |
-| **SCL** | **GPIO 22** | I2C Clock Line |
-| **INT** | *Not Connected* | Interrupt (optional) |
+
+| MAX30102 Sensor Pin | ESP32 GPIO Pin  | Description          |
+| :------------------ | :-------------- | :------------------- |
+| **VIN**             | **3.3V**        | 3.3V Power Supply    |
+| **GND**             | **GND**         | Ground               |
+| **SDA**             | **GPIO 21**     | I2C Data Line        |
+| **SCL**             | **GPIO 22**     | I2C Clock Line       |
+| **INT**             | _Not Connected_ | Interrupt (optional) |
 
 ### Serial Configuration:
+
 - **Baud Rate**: `921600` (or `115200`)
 - **Format**: `sample_index,expected_timestamp_ms,host_timestamp_ms,ir,red`
 - **Sampling Rate**: $100\text{ Hz}$
@@ -223,17 +237,20 @@ To acquire physical pulse data using the MAX30102 sensor and an ESP32 microcontr
 ## Installation & Quickstart Guide
 
 ### Prerequisites
+
 - Python 3.10 or higher
 - Git
 - (Optional) Linux / macOS / Windows with CUDA support for accelerated inference
 
 ### Step 1: Clone Repository
+
 ```bash
 git clone https://github.com/omkar703/Cuffless-BP-Model.git
 cd Cuffless-BP-Model
 ```
 
 ### Step 2: Create and Activate Virtual Environment
+
 ```bash
 python3 -m venv .venv
 
@@ -245,21 +262,26 @@ source .venv/bin/activate
 ```
 
 ### Step 3: Install Dependencies
+
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
 ### Step 4: Configure Environment Variables (Optional for LLM Explainer)
+
 Copy the example environment file and add your Groq API key (if you wish to enable the online LLaMA 3.3 70B explainer; a deterministic local fallback is built-in):
+
 ```bash
 echo "GROQ_API_KEY=your_groq_api_key_here" > .env
 ```
 
 ### Step 5: Launch the Streamlit Application
+
 ```bash
 streamlit run code/phase6c_app/app.py
 ```
+
 Open your browser and navigate to `http://localhost:8501`.
 
 ---
@@ -319,15 +341,9 @@ Cuffless-BP-Model/
 
 1. **Benchmark Dataset**: [Kaggle / UCI Machine Learning Repository Blood Pressure Dataset](https://www.kaggle.com/datasets/mkachuee/BloodPressureDataset)
 2. **Foundational Citations**:
-   - M. Kachuee, M. M. Kiani, H. Mohammadzadeh, M. Shabany, *"Cuff-Less Blood Pressure Estimation Algorithms for Continuous Health-Care Monitoring"*, IEEE Transactions on Biomedical Engineering (TBME), 2016.
-   - M. Kachuee, M. M. Kiani, H. Mohammadzade, M. Shabany, *"Cuff-Less High-Accuracy Calibration-Free Blood Pressure Estimation Using Pulse Transit Time"*, IEEE International Symposium on Circuits and Systems (ISCAS), 2015.
+   - M. Kachuee, M. M. Kiani, H. Mohammadzadeh, M. Shabany, _"Cuff-Less Blood Pressure Estimation Algorithms for Continuous Health-Care Monitoring"_, IEEE Transactions on Biomedical Engineering (TBME), 2016.
+   - M. Kachuee, M. M. Kiani, H. Mohammadzade, M. Shabany, _"Cuff-Less High-Accuracy Calibration-Free Blood Pressure Estimation Using Pulse Transit Time"_, IEEE International Symposium on Circuits and Systems (ISCAS), 2015.
    - Association for the Advancement of Medical Instrumentation (AAMI) / ANSI / ISO 81060-2:2019 non-invasive sphygmomanometers protocol.
    - British Hypertension Society (BHS) Standard for Cuffless Blood Pressure Evaluation.
 
 ---
-
-## Author & Academic Information
-- **Lead Developer**: Omkar Phadatare ([@omkar703](https://github.com/omkar703))
-- **Email**: `omkarphadatareofficial30122004@gmail.com`
-- **Institution**: Vellore Institute of Technology (VIT)
-- **Course**: B.Tech Final Year Capstone Project

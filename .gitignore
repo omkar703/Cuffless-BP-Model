@@ -6,4 +6,5 @@
 code/.venv/
 __pycache__/
 *.pyc
-
+*.h5
+code/outputs/features/features_cache.h5

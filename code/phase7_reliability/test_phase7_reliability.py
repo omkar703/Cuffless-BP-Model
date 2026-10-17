@@ -32,7 +32,7 @@ import numpy as np
 import pandas as pd
 
 # Ensure code/ is on sys.path for imports
-PROJECT_ROOT = Path("/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CODE_DIR = PROJECT_ROOT / "code"
 APP_DIR = CODE_DIR / "phase6c_app"
 for p in [str(CODE_DIR), str(APP_DIR), str(CODE_DIR / "scripts"), str(CODE_DIR / "phase4a")]:

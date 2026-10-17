@@ -83,17 +83,38 @@ def _load_env_once() -> None:
 def _get_api_key() -> Optional[str]:
     """Return cleaned GROQ API key or None. Key is NEVER logged."""
     _load_env_once()
-    # .env uses 'GROQ_API' (not GROQ_API_KEY); also support GROQ_API_KEY for flexibility
-    key = os.environ.get("GROQ_API") or os.environ.get("GROQ_API_KEY") or ""
+    key = ""
+    # Support Streamlit Cloud st.secrets if deployed
+    try:
+        import streamlit as st
+        if hasattr(st, "secrets"):
+            if "GROQ_API_KEY" in st.secrets:
+                key = st.secrets["GROQ_API_KEY"]
+            elif "GROQ_API" in st.secrets:
+                key = st.secrets["GROQ_API"]
+    except Exception:
+        pass
+    if not key:
+        # .env uses 'GROQ_API' (not GROQ_API_KEY); also support GROQ_API_KEY for flexibility
+        key = os.environ.get("GROQ_API") or os.environ.get("GROQ_API_KEY") or ""
     # Strip surrounding whitespace and quotes that may appear in hand-edited .env files
-    key = key.strip().strip('"').strip("'").strip()
+    key = str(key).strip().strip('"').strip("'").strip()
     return key if key else None
 
 
 def _get_model() -> str:
     """Return the Groq model to use, with a safe default."""
     _load_env_once()
-    return (os.environ.get("GROQ_MODEL") or "llama-3.1-8b-instant").strip().strip('"').strip("'")
+    model = ""
+    try:
+        import streamlit as st
+        if hasattr(st, "secrets") and "GROQ_MODEL" in st.secrets:
+            model = st.secrets["GROQ_MODEL"]
+    except Exception:
+        pass
+    if not model:
+        model = os.environ.get("GROQ_MODEL") or "llama-3.1-8b-instant"
+    return str(model).strip().strip('"').strip("'")
 
 
 # ---------------------------------------------------------------------------

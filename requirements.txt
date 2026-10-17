@@ -13,6 +13,7 @@ h5py>=3.8.0
 matplotlib>=3.7.0
 seaborn>=0.12.0
 streamlit>=1.30.0
+Pillow>=9.5.0
 
 # Hardware Serial Streaming
 pyserial>=3.5

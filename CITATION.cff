@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this research repository or model architecture in your academic work, please cite it as below."
+title: "Calibration-Free Cuffless Blood Pressure Estimation Using Photoplethysmography Alone"
+type: software
+authors:
+  - given-names: "Omkar"
+    family-names: "P."
+url: "https://github.com/omkar703/Cuffless-BP-Model"
+keywords:
+  - "cuffless blood pressure"
+  - "photoplethysmography"
+  - "deep learning"
+  - "conformal prediction"
+  - "reliability engineering"
+  - "MAX30102"
+  - "ESP32"
+license: "MIT"

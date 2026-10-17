@@ -43,7 +43,7 @@ print("=" * 70)
 # =========================================================================
 # 2. Directory Setup & Paths
 # =========================================================================
-PROJECT_ROOT = Path("/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 PHASE4B_DIR  = PROJECT_ROOT / "code" / "outputs" / "phase4b_temporal_gru"
 PHASE4B_CKPT = PHASE4B_DIR / "checkpoints" / "best_temporal_gru.pt"
 TEST_SEQ_NPZ = PHASE4B_DIR / "sequences" / "test_sequences.npz"

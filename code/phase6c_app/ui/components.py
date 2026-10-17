@@ -47,18 +47,18 @@ def render_progress_bar(current_step: int):
 def render_step_title(step_num: int, title: str, subtitle: str = ""):
     """Renders a clean step title."""
     st.markdown(f'<div class="fade-in">', unsafe_allow_html=True)
-    st.markdown(f"<p style='color: #86868b; font-size: 14px; font-weight: 600; margin-bottom: -10px;'>{step_num:02d}</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='color: #86868b; font-size: 16px; font-weight: 600; margin-bottom: -10px;'>{step_num:02d}</p>", unsafe_allow_html=True)
     st.markdown(f"<h2>{title}</h2>", unsafe_allow_html=True)
     if subtitle:
-        st.markdown(f"<p style='font-size: 18px; color: #1d1d1f; margin-bottom: 24px;'>{subtitle}</p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='font-size: 20px; color: #1d1d1f; margin-bottom: 24px;'>{subtitle}</p>", unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
 
 def render_what_this_means(text: str):
     """Renders the 'What this means' microcopy block."""
     html = f"""
     <div style="margin-top: 30px; margin-bottom: 15px; border-top: 1px solid #E5E5EA; padding-top: 15px;" class="fade-in">
-        <p style="font-size: 12px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">What this means</p>
-        <p style="font-size: 15px; color: #333336;">{text}</p>
+        <p style="font-size: 14px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">What this means</p>
+        <p style="font-size: 17px; color: #333336;">{text}</p>
     </div>
     """
     st.markdown(html, unsafe_allow_html=True)
@@ -85,11 +85,5 @@ def render_navigation_buttons(current_step: int, total_steps: int):
                 st.rerun()
 
 def render_research_footer():
-    st.markdown(
-        """
-        <div class="research-footer">
-            <b>Research prototype</b> &nbsp;|&nbsp; Frozen Phase 4A–Phase 7 pipeline &nbsp;|&nbsp; PPG-only input &nbsp;|&nbsp; No ECG used by the model
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    """Empty footer — research disclaimers removed per user preference."""
+    pass

@@ -24,7 +24,7 @@ from sklearn.metrics import roc_auc_score, average_precision_score, brier_score_
 from sklearn.calibration import calibration_curve
 
 # Add project root to sys.path
-PROJECT_ROOT = Path("/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT / "code"))
 
 from phase7_reliability.reliability_engine import (

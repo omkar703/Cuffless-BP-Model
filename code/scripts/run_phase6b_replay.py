@@ -26,7 +26,7 @@ import torch
 import torch.nn as nn
 
 # Setup paths
-PROJECT_ROOT = Path("/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CODE_DIR = PROJECT_ROOT / "code"
 SCRIPTS_DIR = CODE_DIR / "scripts"
 OUTPUT_DIR = CODE_DIR / "outputs" / "phase6b_live_stream"

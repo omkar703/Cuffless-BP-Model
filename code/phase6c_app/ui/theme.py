@@ -34,28 +34,37 @@ def apply_premium_theme():
         }
 
         h1 {
-            font-size: 38px !important;
+            font-size: 44px !important;
             letter-spacing: -0.5px !important;
             margin-bottom: 0.5em !important;
         }
         
         h2 {
-            font-size: 26px !important;
+            font-size: 32px !important;
             margin-bottom: 0.5em !important;
         }
 
         h3 {
+            font-size: 24px !important;
+        }
+
+        h4 {
             font-size: 20px !important;
         }
 
         p, div, span, li {
-            font-size: 16px;
-            line-height: 1.5;
+            font-size: 18px;
+            line-height: 1.6;
             color: #333336;
         }
 
+        .stMarkdown p {
+            font-size: 18px !important;
+            line-height: 1.6 !important;
+        }
+
         .caption-text {
-            font-size: 13px !important;
+            font-size: 15px !important;
             color: #86868b !important;
         }
 
@@ -99,7 +108,7 @@ def apply_premium_theme():
             text-align: center;
             margin-top: -10px;
             margin-bottom: 20px;
-            font-size: 13px;
+            font-size: 16px;
             font-weight: 500;
             color: #86868b;
             letter-spacing: 0.5px;
@@ -111,14 +120,14 @@ def apply_premium_theme():
         .review-text { color: #f57f17; font-weight: 600; }
         .abstain-text { color: #c62828; font-weight: 600; }
         
-        .trust-badge { background-color: #e8f5e9; color: #2e7d32; padding: 4px 12px; border-radius: 16px; font-weight: 600; font-size: 14px; border: 1px solid #c8e6c9;}
-        .review-badge { background-color: #fff8e1; color: #f57f17; padding: 4px 12px; border-radius: 16px; font-weight: 600; font-size: 14px; border: 1px solid #ffecb3;}
-        .abstain-badge { background-color: #ffebee; color: #c62828; padding: 4px 12px; border-radius: 16px; font-weight: 600; font-size: 14px; border: 1px solid #ffcdd2;}
-        .neutral-badge { background-color: #f5f5f7; color: #1d1d1f; padding: 4px 12px; border-radius: 16px; font-weight: 500; font-size: 14px; border: 1px solid #d2d2d7;}
+        .trust-badge { background-color: #e8f5e9; color: #2e7d32; padding: 6px 16px; border-radius: 18px; font-weight: 600; font-size: 16px; border: 1px solid #c8e6c9;}
+        .review-badge { background-color: #fff8e1; color: #f57f17; padding: 6px 16px; border-radius: 18px; font-weight: 600; font-size: 16px; border: 1px solid #ffecb3;}
+        .abstain-badge { background-color: #ffebee; color: #c62828; padding: 6px 16px; border-radius: 18px; font-weight: 600; font-size: 16px; border: 1px solid #ffcdd2;}
+        .neutral-badge { background-color: #f5f5f7; color: #1d1d1f; padding: 6px 16px; border-radius: 18px; font-weight: 500; font-size: 16px; border: 1px solid #d2d2d7;}
 
         /* BP Display */
         .bp-display {
-            font-size: 72px;
+            font-size: 80px;
             font-weight: 600;
             letter-spacing: -2px;
             color: #1d1d1f;
@@ -127,7 +136,7 @@ def apply_premium_theme():
             line-height: 1;
         }
         .bp-unit {
-            font-size: 24px;
+            font-size: 28px;
             color: #86868b;
             font-weight: 400;
             letter-spacing: 0;
@@ -138,7 +147,7 @@ def apply_premium_theme():
             justify-content: center;
             gap: 60px;
             color: #86868b;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 500;
             margin-top: -10px;
             margin-bottom: 20px;
@@ -163,12 +172,11 @@ def apply_premium_theme():
         
         /* Research footer */
         .research-footer {
-            margin-top: 60px;
-            padding: 20px;
-            text-align: center;
-            font-size: 13px;
-            color: #86868b;
-            border-top: 1px solid #E5E5EA;
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
         }
 
         /* Solid black button styling with white text, no animation, no text inversion */
@@ -181,8 +189,9 @@ def apply_premium_theme():
             border: 1px solid #000000 !important;
             background-color: #000000 !important;
             color: #ffffff !important;
+            font-size: 16px !important;
             font-weight: 500 !important;
-            padding: 8px 24px !important;
+            padding: 10px 28px !important;
             transition: none !important;
             animation: none !important;
             box-shadow: none !important;
@@ -191,12 +200,14 @@ def apply_premium_theme():
         /* Ensure all text elements inside button are strictly white */
         div.stButton > button * {
             color: #ffffff !important;
+            font-size: 16px !important;
             transition: none !important;
             animation: none !important;
         }
 
         div.stButton > button p {
             color: #ffffff !important;
+            font-size: 16px !important;
             font-weight: 500 !important;
             margin: 0 !important;
         }
@@ -212,88 +223,49 @@ def apply_premium_theme():
 
         div.stButton > button:hover * {
             color: #ffffff !important;
+            font-size: 16px !important;
             transition: none !important;
             animation: none !important;
         }
 
         div.stButton > button:hover p {
             color: #ffffff !important;
+            font-size: 16px !important;
         }
 
-        /* Explicit Light Apple Sidebar with High-Contrast Crisp Typography */
-        section[data-testid="stSidebar"],
-        section[data-testid="stSidebar"] > div,
-        div[data-testid="stSidebarUserContent"],
-        div[data-testid="stSidebarHeader"] {
-            background-color: #FFFFFF !important;
-            border-right: 1px solid #E5E5EA !important;
-        }
-
-        section[data-testid="stSidebar"] h1,
-        section[data-testid="stSidebar"] h2,
-        section[data-testid="stSidebar"] h3,
-        section[data-testid="stSidebar"] h4 {
-            color: #1D1D1F !important;
+        /* Streamlit widget labels, inputs, and radios */
+        label[data-testid="stWidgetLabel"] p,
+        label[data-testid="stWidgetLabel"] span {
+            font-size: 16px !important;
             font-weight: 600 !important;
-            letter-spacing: -0.2px !important;
+            color: #1d1d1f !important;
         }
 
-        section[data-testid="stSidebar"] p,
-        section[data-testid="stSidebar"] span,
-        section[data-testid="stSidebar"] label,
-        section[data-testid="stSidebar"] div {
-            color: #1D1D1F !important;
+        div[data-testid="stRadio"] label p,
+        div[data-testid="stRadio"] span {
+            font-size: 16px !important;
         }
 
-        section[data-testid="stSidebar"] .stCaption,
-        section[data-testid="stSidebar"] .stCaption p {
-            color: #6E6E73 !important;
-            font-size: 13px !important;
+        div[data-testid="stMetricValue"] {
+            font-size: 28px !important;
+            font-weight: 600 !important;
         }
 
-        /* Sidebar Toggle Control */
-        section[data-testid="stSidebar"] label[data-baseweb="checkbox"] p,
-        section[data-testid="stSidebar"] label[data-baseweb="checkbox"] span {
-            color: #1D1D1F !important;
-            font-size: 14px !important;
+        div[data-testid="stMetricLabel"] p {
+            font-size: 15px !important;
+            color: #86868b !important;
             font-weight: 500 !important;
         }
 
-        /* Sidebar Radio Navigation */
-        section[data-testid="stSidebar"] div[role="radiogroup"] {
-            gap: 6px !important;
-        }
-
-        section[data-testid="stSidebar"] div[role="radiogroup"] label {
-            background-color: transparent !important;
-            padding: 4px 10px !important;
-            border-radius: 8px !important;
-            transition: none !important;
-        }
-
-        section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
-            background-color: #F5F5F7 !important;
-        }
-
-        section[data-testid="stSidebar"] div[role="radiogroup"] label p {
-            color: #1D1D1F !important;
-            font-size: 14px !important;
-            font-weight: 500 !important;
-        }
-
-        /* Ensure Reset Session and other buttons in sidebar remain solid black with white text */
-        section[data-testid="stSidebar"] div.stButton > button {
-            background-color: #000000 !important;
-            color: #FFFFFF !important;
-            border-radius: 20px !important;
-        }
-
-        section[data-testid="stSidebar"] div.stButton > button * {
-            color: #FFFFFF !important;
-        }
-
-        section[data-testid="stSidebar"] div.stButton > button p {
-            color: #FFFFFF !important;
+        /* Completely remove and hide the sidebar and any collapsed toggle control */
+        section[data-testid="stSidebar"],
+        div[data-testid="stSidebar"],
+        [data-testid="stSidebarCollapsedControl"],
+        div[data-testid="collapsedControl"] {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            visibility: hidden !important;
         }
     </style>
     """

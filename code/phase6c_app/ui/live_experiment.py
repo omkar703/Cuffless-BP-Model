@@ -127,9 +127,9 @@ def render_live_experiment_tab():
 
     # Header
     st.markdown("<div class='fade-in'>", unsafe_allow_html=True)
-    st.markdown("<p style='color: #86868b; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;'>Real-Time Research Mode</p>", unsafe_allow_html=True)
-    st.markdown("<h1 style='font-size: 32px; margin-bottom: 6px;'>LIVE EXPERIMENT</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='font-size: 16px; color: #333336; margin-bottom: 20px;'>Run the complete cuffless BP pipeline using an actual PPG recording.<br><span style='font-size: 13px; color: #86868b;'>Input → Signal Quality → Processing → 60 s Context → BP Estimate → Reliability</span></p>", unsafe_allow_html=True)
+    st.markdown("<p style='color: #86868b; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;'>Real-Time Research Mode</p>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-size: 38px; margin-bottom: 6px;'>LIVE EXPERIMENT</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 18px; color: #333336; margin-bottom: 20px;'>Run the complete cuffless BP pipeline using an actual PPG recording.<br><span style='font-size: 15px; color: #86868b;'>Input → Signal Quality → Processing → 60 s Context → BP Estimate → Reliability</span></p>", unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
 
     # -------------------------------------------------------------------------
@@ -144,7 +144,7 @@ def render_live_experiment_tab():
     if "active_input_source" not in st.session_state:
         st.session_state.active_input_source = input_options[0]
 
-    st.markdown("<p style='font-size: 13px; font-weight: 600; color: #86868b; text-transform: uppercase; margin-bottom: 6px;'>Data Source</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 15px; font-weight: 600; color: #86868b; text-transform: uppercase; margin-bottom: 6px;'>Data Source</p>", unsafe_allow_html=True)
     
     selected_input = st.radio(
         "Select Data Source",
@@ -170,7 +170,7 @@ def render_live_experiment_tab():
     # Input Option A: Connect Hardware
     if selected_input == "Connect Hardware (ESP32)":
         with st.container(border=True):
-            st.markdown("<p style='font-size: 14px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;'>Physical Serial Acquisition (MAX30102 + ESP32)</p>", unsafe_allow_html=True)
+            st.markdown("<p style='font-size: 16px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;'>Physical Serial Acquisition (MAX30102 + ESP32)</p>", unsafe_allow_html=True)
             col_p1, col_p2, col_p3 = st.columns([2, 1, 1])
             
             ports = discover_serial_ports()
@@ -200,14 +200,14 @@ def render_live_experiment_tab():
 
             # Connection status strip
             if engine.is_serial_connected:
-                st.markdown(f"<p style='color: #2e7d32; font-size: 13px; font-weight: 500; margin-top: 8px;'>● <b>Connected:</b> {engine.connected_port} @ {baud_rate:,} baud &nbsp;|&nbsp; <b>DEVICE STREAM ACTIVE</b></p>", unsafe_allow_html=True)
+                st.markdown(f"<p style='color: #2e7d32; font-size: 15px; font-weight: 500; margin-top: 8px;'>● <b>Connected:</b> {engine.connected_port} @ {baud_rate:,} baud &nbsp;|&nbsp; <b>DEVICE STREAM ACTIVE</b></p>", unsafe_allow_html=True)
             else:
-                st.markdown("<p style='color: #86868b; font-size: 13px; margin-top: 8px;'>○ Hardware disconnected. Connect your ESP32 or use recorded session.</p>", unsafe_allow_html=True)
+                st.markdown("<p style='color: #86868b; font-size: 15px; margin-top: 8px;'>○ Hardware disconnected. Connect your ESP32 or use recorded session.</p>", unsafe_allow_html=True)
 
     # Input Option B: Upload Recorded Session
     elif selected_input == "Upload Recorded Session":
         with st.container(border=True):
-            st.markdown("<p style='font-size: 14px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;'>Upload Captured Physical Recording</p>", unsafe_allow_html=True)
+            st.markdown("<p style='font-size: 16px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;'>Upload Captured Physical Recording</p>", unsafe_allow_html=True)
             uploaded_file = st.file_uploader("Select session package (.zip) or PPG samples (.csv)", type=["zip", "csv"])
             if uploaded_file is not None:
                 if st.button("Load & Stream Session", key="btn_load_uploaded"):
@@ -290,8 +290,8 @@ def render_live_experiment_tab():
         f"""
         <div style="background: #FFFFFF; border: 1px solid #E5E5EA; border-radius: 10px; padding: 14px 20px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between;">
             <div>
-                <p style="font-size: 12px; font-weight: 600; color: #86868b; text-transform: uppercase; margin-bottom: 2px;">System Status</p>
-                <p style="font-size: 15px; font-weight: 500; color: #1d1d1f; margin: 0;">{engine.status_message}</p>
+                <p style="font-size: 14px; font-weight: 600; color: #86868b; text-transform: uppercase; margin-bottom: 2px;">System Status</p>
+                <p style="font-size: 17px; font-weight: 500; color: #1d1d1f; margin: 0;">{engine.status_message}</p>
             </div>
             <div>
                 <span class="{'trust-badge' if engine.pipeline_state=='COMPLETE' else 'neutral-badge'}">{engine.pipeline_state}</span>
@@ -305,7 +305,7 @@ def render_live_experiment_tab():
     with st.container(border=True):
         col_hdr, col_mode = st.columns([3, 2])
         with col_hdr:
-            st.markdown("<p style='font-size: 14px; font-weight: 600; color: #1d1d1f; margin-bottom: 4px;'>REAL-TIME PPG</p>", unsafe_allow_html=True)
+            st.markdown("<p style='font-size: 16px; font-weight: 600; color: #1d1d1f; margin-bottom: 4px;'>REAL-TIME PPG</p>", unsafe_allow_html=True)
         with col_mode:
             ppg_view = st.radio(
                 "Signal View",
@@ -327,7 +327,7 @@ def render_live_experiment_tab():
         elapsed_s = engine.raw_display_times[-1] if engine.raw_display_times else 0.0
         c_m3.metric("Elapsed Time", f"{elapsed_s:.1f} s")
         qc_col = "#2e7d32" if engine.current_signal_qc == "PASS" else ("#f57f17" if engine.current_signal_qc == "WARN" else "#86868b")
-        c_m4.markdown(f"<div style='text-align:center;'><p style='font-size:14px;color:#86868b;margin:0;'>Signal Quality</p><p style='font-size:22px;font-weight:600;color:{qc_col};margin:0;'>{engine.current_signal_qc}</p></div>", unsafe_allow_html=True)
+        c_m4.markdown(f"<div style='text-align:center;'><p style='font-size:15px;color:#86868b;margin:0;'>Signal Quality</p><p style='font-size:24px;font-weight:600;color:{qc_col};margin:0;'>{engine.current_signal_qc}</p></div>", unsafe_allow_html=True)
 
         # Optional 3-Channel Processed View (PPG, VPG, APG)
         if getattr(engine, "latest_window_tensor", None) is not None:
@@ -339,8 +339,8 @@ def render_live_experiment_tab():
     # -------------------------------------------------------------------------
     st.markdown("<br>", unsafe_allow_html=True)
     with st.container(border=True):
-        st.markdown("<p style='font-size: 14px; font-weight: 600; color: #1d1d1f; margin-bottom: 4px;'>60-SECOND TEMPORAL CONTEXT PROGRESS</p>", unsafe_allow_html=True)
-        st.markdown("<p style='font-size: 13px; color: #86868b; margin-bottom: 16px;'>The temporal GRU requires 6 consecutive 10-second windows before generating blood pressure predictions.</p>", unsafe_allow_html=True)
+        st.markdown("<p style='font-size: 16px; font-weight: 600; color: #1d1d1f; margin-bottom: 4px;'>60-SECOND TEMPORAL CONTEXT PROGRESS</p>", unsafe_allow_html=True)
+        st.markdown("<p style='font-size: 15px; color: #86868b; margin-bottom: 16px;'>The temporal GRU requires 6 consecutive 10-second windows before generating blood pressure predictions.</p>", unsafe_allow_html=True)
 
         # 6 Window Boxes
         cols_w = st.columns(6)
@@ -366,14 +366,14 @@ def render_live_experiment_tab():
                 st.markdown(
                     f"""
                     <div style="background: {bg}; border-radius: 8px; padding: 12px 6px; text-align: center; border: 1px solid #E5E5EA;">
-                        <p style="font-size: 12px; font-weight: 600; color: {fg}; margin: 0 0 4px 0;">WIN {w_i+1:02d}</p>
-                        <p style="font-size: 11px; font-weight: 600; color: {fg}; margin: 0;">{txt}</p>
+                        <p style="font-size: 14px; font-weight: 600; color: {fg}; margin: 0 0 4px 0;">WIN {w_i+1:02d}</p>
+                        <p style="font-size: 13px; font-weight: 600; color: {fg}; margin: 0;">{txt}</p>
                     </div>
                     """,
                     unsafe_allow_html=True
                 )
 
-        st.markdown(f"<p style='text-align: center; font-size: 13px; color: #6e6e73; margin-top: 14px;'><b>Sequence Context:</b> {min(n_windows, 6)} / 6 windows ready ({min(n_windows * 10, 60)} / 60 seconds)</p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='text-align: center; font-size: 15px; color: #6e6e73; margin-top: 14px;'><b>Sequence Context:</b> {min(n_windows, 6)} / 6 windows ready ({min(n_windows * 10, 60)} / 60 seconds)</p>", unsafe_allow_html=True)
 
     # -------------------------------------------------------------------------
     # Blood Pressure Estimation & Reliability Output (Centerpiece)
@@ -387,7 +387,7 @@ def render_live_experiment_tab():
         
         # BP Display Card
         with st.container(border=True):
-            st.markdown("<p style='font-size: 13px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;'>Blood Pressure Estimate</p>", unsafe_allow_html=True)
+            st.markdown("<p style='font-size: 15px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;'>Blood Pressure Estimate</p>", unsafe_allow_html=True)
             st.markdown(
                 f"""
                 <div class="bp-display">
@@ -402,12 +402,12 @@ def render_live_experiment_tab():
             )
             st.markdown(
                 f"""
-                <div style="display: flex; justify-content: center; gap: 30px; font-size: 13px; color: #86868b; margin-top: 10px;">
+                <div style="display: flex; justify-content: center; gap: 30px; font-size: 15px; color: #86868b; margin-top: 10px;">
                     <span>SBP 95% Bound: [{pred['sbp_lower']:.1f} – {pred['sbp_upper']:.1f}]</span>
                     <span>DBP 95% Bound: [{pred['dbp_lower']:.1f} – {pred['dbp_upper']:.1f}]</span>
                     <span>Context: 60-second temporal history</span>
                 </div>
-                <p style="text-align: center; font-size: 12px; color: #86868b; margin-top: 12px;">Generated from physical PPG alone • Zero ECG input</p>
+                <p style="text-align: center; font-size: 14px; color: #86868b; margin-top: 12px;">Generated from physical PPG alone • Zero ECG input</p>
                 """,
                 unsafe_allow_html=True
             )
@@ -420,8 +420,8 @@ def render_live_experiment_tab():
             st.markdown(
                 f"""
                 <div style="text-align: center; margin-bottom: 24px;">
-                    <p style="font-size: 13px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Phase 7 Prediction Reliability</p>
-                    <span class="{badge_class}" style="font-size: 18px; padding: 6px 20px;">{state}</span>
+                    <p style="font-size: 15px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Phase 7 Prediction Reliability</p>
+                    <span class="{badge_class}" style="font-size: 22px; padding: 8px 24px;">{state}</span>
                 </div>
                 """,
                 unsafe_allow_html=True
@@ -435,7 +435,7 @@ def render_live_experiment_tab():
                 st.write(f"**Prediction Interval:** `{rel['conformal_width']}`")
                 st.write(f"**Temporal Stability:** `{rel['temporal_stability']}`")
                 
-            st.markdown(f"<p style='font-size: 13px; color: #6e6e73; margin-top: 12px;'><b>Risk Score:</b> <code>{rel['reliability_score']:.4f}</code> &nbsp;|&nbsp; <b>Recommendation:</b> {rel['recommendation']}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 15px; color: #6e6e73; margin-top: 12px;'><b>Risk Score:</b> <code>{rel['reliability_score']:.4f}</code> &nbsp;|&nbsp; <b>Recommendation:</b> {rel['recommendation']}</p>", unsafe_allow_html=True)
 
         # AI Explanation Section
         st.markdown("<br>", unsafe_allow_html=True)
@@ -453,13 +453,13 @@ def render_live_experiment_tab():
             with st.container(border=True):
                 st.markdown("### Result Explanation")
                 if exp.get("summary"):
-                    st.markdown(exp["summary"])
+                    st.markdown(f"<p style='font-size: 17px;'>{exp['summary']}</p>", unsafe_allow_html=True)
                 if exp.get("signal_explanation"):
-                    st.markdown(f"**Signal Evidence:** {exp['signal_explanation']}")
+                    st.markdown(f"<p style='font-size: 17px;'><b>Signal Evidence:</b> {exp['signal_explanation']}</p>", unsafe_allow_html=True)
                 if exp.get("state_interpretation"):
-                    st.markdown(f"**State Assessment:** {exp['state_interpretation']}")
+                    st.markdown(f"<p style='font-size: 17px;'><b>State Assessment:</b> {exp['state_interpretation']}</p>", unsafe_allow_html=True)
                 if exp.get("recommendation_for_researcher"):
-                    st.markdown(f"**Recommendation:** {exp['recommendation_for_researcher']}")
+                    st.markdown(f"<p style='font-size: 17px;'><b>Recommendation:</b> {exp['recommendation_for_researcher']}</p>", unsafe_allow_html=True)
                 disclaimer = exp.get("research_disclaimer", "This system is a research prototype and not a clinical device.")
                 st.info(f"**Research Note:** {disclaimer}")
                 st.caption("Generated from the structured research output")
@@ -469,7 +469,7 @@ def render_live_experiment_tab():
         # ---------------------------------------------------------------------
         st.markdown("<br>", unsafe_allow_html=True)
         with st.expander("Reference Cuff Measurement (Optional Comparison)", expanded=False):
-            st.markdown("<p style='font-size: 13px; color: #6e6e73;'>Enter an external oscillometric cuff reading for exploratory comparison against the neural estimate. <b>This value is not fed into the model and does not recalibrate predictions.</b></p>", unsafe_allow_html=True)
+            st.markdown("<p style='font-size: 15px; color: #6e6e73;'>Enter an external oscillometric cuff reading for exploratory comparison against the neural estimate. <b>This value is not fed into the model and does not recalibrate predictions.</b></p>", unsafe_allow_html=True)
             col_rc1, col_rc2, col_rc3 = st.columns([1, 1, 1])
             with col_rc1:
                 ref_s = st.number_input("Reference SBP (mmHg)", min_value=60.0, max_value=240.0, value=120.0, step=1.0)

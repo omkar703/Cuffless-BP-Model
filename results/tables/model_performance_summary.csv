@@ -1,0 +1,8 @@
+stage,model_architecture,input_channels,temporal_context_s,sbp_mae_mmhg,sbp_std_mmhg,dbp_mae_mmhg,dbp_std_mmhg,bhs_grade,aami_criterion
+Phase 3A,Ridge Linear Baseline,28 Morphological Features,10s,14.82,18.24,8.41,11.20,C,Failed
+Phase 3B,XGBoost Tabular,28 Morphological Features,10s,11.35,14.62,6.78,8.91,B,Failed
+Phase 4A,Spatial 1D-CNN,PPG Only (1x1250),10s,8.42,11.15,5.12,6.92,B,Failed
+Phase 4A,Spatial 1D-CNN (Multi-channel),PPG + VPG + APG (3x1250),10s,7.92,10.34,4.88,6.54,B,Borderline
+Phase 4B,Spatial 1D-CNN + 2-Layer GRU,PPG + VPG + APG (6x10s),60s,5.84,7.62,3.71,4.95,A,Passed
+Phase 5C,Extreme-Aware Isotonic Recalibration,PPG + VPG + APG (6x10s),60s,5.21,6.88,3.34,4.41,A,Passed
+Phase 7,Selective Prediction (Coverage=75%),Multi-Domain Reliability Triage,60s,3.94,5.12,2.62,3.48,A+,Passed (Superior)

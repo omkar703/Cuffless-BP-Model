@@ -66,16 +66,16 @@ def render_step_02(demo_data, tech_mode):
     
     st.markdown(f"""
     <div style="background: white; border: 1px solid #E5E5EA; border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 24px;" class="fade-in">
-        <p style="font-size: 14px; color: #86868b; text-transform: uppercase; font-weight: 600; margin-bottom: 8px;">Signal Quality</p>
+        <p style="font-size: 16px; color: #86868b; text-transform: uppercase; font-weight: 600; margin-bottom: 8px;">Signal Quality</p>
         <h2 class="{color_class}" style="margin: 0;">{verdict}</h2>
     </div>
     """, unsafe_allow_html=True)
     
     c1, c2, c3, c4 = st.columns(4)
-    c1.markdown("<div style='text-align:center;'><b>Pulse waveform</b><br><span style='color:#2e7d32'>PASS</span></div>", unsafe_allow_html=True)
-    c2.markdown("<div style='text-align:center;'><b>Clipping</b><br><span style='color:#2e7d32'>LOW</span></div>", unsafe_allow_html=True)
-    c3.markdown("<div style='text-align:center;'><b>Pulse detection</b><br><span style='color:#2e7d32'>STABLE</span></div>", unsafe_allow_html=True)
-    c4.markdown("<div style='text-align:center;'><b>Signal amplitude</b><br><span style='color:#2e7d32'>WITHIN RANGE</span></div>", unsafe_allow_html=True)
+    c1.markdown("<div style='text-align:center; font-size: 16px;'><b>Pulse waveform</b><br><span style='color:#2e7d32'>PASS</span></div>", unsafe_allow_html=True)
+    c2.markdown("<div style='text-align:center; font-size: 16px;'><b>Clipping</b><br><span style='color:#2e7d32'>LOW</span></div>", unsafe_allow_html=True)
+    c3.markdown("<div style='text-align:center; font-size: 16px;'><b>Pulse detection</b><br><span style='color:#2e7d32'>STABLE</span></div>", unsafe_allow_html=True)
+    c4.markdown("<div style='text-align:center; font-size: 16px;'><b>Signal amplitude</b><br><span style='color:#2e7d32'>WITHIN RANGE</span></div>", unsafe_allow_html=True)
     
     render_what_this_means("Good signal quality means the system has a recognizable pulse waveform to process. Poor signal quality can reduce the reliability of everything that follows.")
     
@@ -112,7 +112,7 @@ def render_step_03(demo_data, tech_mode):
             ax.set_yticks([])
             data = traces[ch_key][:n_pts]
             ax.plot(data, color=color, linewidth=1.5)
-            ax.text(0.01, 0.75, label, transform=ax.transAxes, fontsize=10, fontweight='500', color='#1d1d1f')
+            ax.text(0.01, 0.75, label, transform=ax.transAxes, fontsize=12, fontweight='500', color='#1d1d1f')
             
         fig.tight_layout()
         st.pyplot(fig, use_container_width=True)
@@ -137,14 +137,14 @@ def render_step_04(demo_data, tech_mode):
     
     st.markdown("""
     <div style="display: flex; justify-content: space-between; margin: 30px 0;" class="fade-in">
-        <div style="width: 15%; height: 60px; background: #E5E5EA; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 500;">01</div>
-        <div style="width: 15%; height: 60px; background: #E5E5EA; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 500;">02</div>
-        <div style="width: 15%; height: 60px; background: #E5E5EA; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 500;">03</div>
-        <div style="width: 15%; height: 60px; background: #E5E5EA; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 500;">04</div>
-        <div style="width: 15%; height: 60px; background: #E5E5EA; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 500;">05</div>
-        <div style="width: 15%; height: 60px; background: #4F6EF7; color: white; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 600;">06</div>
+        <div style="width: 15%; height: 60px; background: #E5E5EA; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 500;">01</div>
+        <div style="width: 15%; height: 60px; background: #E5E5EA; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 500;">02</div>
+        <div style="width: 15%; height: 60px; background: #E5E5EA; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 500;">03</div>
+        <div style="width: 15%; height: 60px; background: #E5E5EA; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 500;">04</div>
+        <div style="width: 15%; height: 60px; background: #E5E5EA; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 500;">05</div>
+        <div style="width: 15%; height: 60px; background: #4F6EF7; color: white; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600;">06</div>
     </div>
-    <div style="text-align: center; color: #86868b; font-weight: 500; letter-spacing: 1px; font-size: 13px; margin-top: -15px; margin-bottom: 30px;">
+    <div style="text-align: center; color: #86868b; font-weight: 500; letter-spacing: 1px; font-size: 15px; margin-top: -15px; margin-bottom: 30px;">
         ↓<br>60 SECOND CONTEXT
     </div>
     """, unsafe_allow_html=True)
@@ -154,8 +154,8 @@ def render_step_04(demo_data, tech_mode):
         st.markdown(
             """
             <div style="background: white; border: 1px solid #E5E5EA; border-radius: 10px; padding: 18px; text-align: center;">
-                <p style="font-weight: 600; font-size: 16px; margin-bottom: 6px; color: #1d1d1f;">CNN Layer</p>
-                <p style="font-size: 14px; color: #6e6e73; margin: 0;">Extracts spatial pulse features from each 10-second window</p>
+                <p style="font-weight: 600; font-size: 18px; margin-bottom: 6px; color: #1d1d1f;">CNN Layer</p>
+                <p style="font-size: 16px; color: #6e6e73; margin: 0;">Extracts spatial pulse features from each 10-second window</p>
             </div>
             """,
             unsafe_allow_html=True
@@ -164,8 +164,8 @@ def render_step_04(demo_data, tech_mode):
         st.markdown(
             """
             <div style="background: white; border: 1px solid #E5E5EA; border-radius: 10px; padding: 18px; text-align: center;">
-                <p style="font-weight: 600; font-size: 16px; margin-bottom: 6px; color: #1d1d1f;">Temporal GRU</p>
-                <p style="font-size: 14px; color: #6e6e73; margin: 0;">Learns how features evolve across the 60-second sequence</p>
+                <p style="font-weight: 600; font-size: 18px; margin-bottom: 6px; color: #1d1d1f;">Temporal GRU</p>
+                <p style="font-size: 16px; color: #6e6e73; margin: 0;">Learns how features evolve across the 60-second sequence</p>
             </div>
             """,
             unsafe_allow_html=True
@@ -191,7 +191,7 @@ def render_step_05(demo_data, tech_mode):
             <span>DBP</span>
         </div>
         <hr style="border: 0; border-top: 1px solid #E5E5EA; margin: 24px 0;">
-        <div style="display: flex; justify-content: center; gap: 40px; font-size: 14px; color: #86868b;">
+        <div style="display: flex; justify-content: center; gap: 40px; font-size: 16px; color: #86868b;">
             <span>Estimated from PPG</span>
             <span>No ECG input</span>
             <span>60-second temporal context</span>
@@ -213,23 +213,23 @@ def render_step_06(demo_data, tech_mode):
     st.markdown(f"""
     <div style="background: white; border: 1px solid #E5E5EA; border-radius: 12px; padding: 30px; margin-bottom: 20px;" class="fade-in">
         <div style="text-align: center; margin-bottom: 30px;">
-            <p style="font-size: 13px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Prediction Reliability</p>
-            <span class="{badge_class}" style="font-size: 20px; padding: 8px 24px;">{state}</span>
+            <p style="font-size: 16px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">Prediction Reliability</p>
+            <span class="{badge_class}" style="font-size: 22px; padding: 8px 26px;">{state}</span>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
-            <div style="padding: 12px; background: #F5F5F7; border-radius: 8px; display: flex; justify-content: space-between;">
+            <div style="padding: 14px; background: #F5F5F7; border-radius: 8px; display: flex; justify-content: space-between; font-size: 16px;">
                 <span style="color: #86868b; font-weight: 500;">Signal quality</span>
                 <span style="font-weight: 600;">{payload['signal_quality']}</span>
             </div>
-            <div style="padding: 12px; background: #F5F5F7; border-radius: 8px; display: flex; justify-content: space-between;">
+            <div style="padding: 14px; background: #F5F5F7; border-radius: 8px; display: flex; justify-content: space-between; font-size: 16px;">
                 <span style="color: #86868b; font-weight: 500;">Model uncertainty</span>
                 <span style="font-weight: 600;">{payload['model_uncertainty']}</span>
             </div>
-            <div style="padding: 12px; background: #F5F5F7; border-radius: 8px; display: flex; justify-content: space-between;">
+            <div style="padding: 14px; background: #F5F5F7; border-radius: 8px; display: flex; justify-content: space-between; font-size: 16px;">
                 <span style="color: #86868b; font-weight: 500;">Prediction interval</span>
                 <span style="font-weight: 600;">{payload['conformal_width']}</span>
             </div>
-            <div style="padding: 12px; background: #F5F5F7; border-radius: 8px; display: flex; justify-content: space-between;">
+            <div style="padding: 14px; background: #F5F5F7; border-radius: 8px; display: flex; justify-content: space-between; font-size: 16px;">
                 <span style="color: #86868b; font-weight: 500;">Temporal stability</span>
                 <span style="font-weight: 600;">{payload['temporal_stability']}</span>
             </div>
@@ -249,7 +249,7 @@ def render_step_07(demo_data, tech_mode):
         st.session_state.explanation = None
         
     st.markdown("""
-    <p style="font-size: 15px; margin-bottom: 20px;">
+    <p style="font-size: 17px; margin-bottom: 20px;">
     The language model only explains the structured result. It does not generate or modify the BP estimate.
     </p>
     """, unsafe_allow_html=True)
@@ -274,16 +274,16 @@ def render_step_07(demo_data, tech_mode):
         with st.container(border=True):
             st.markdown("### Result Explanation")
             if exp.get("summary"):
-                st.markdown(exp["summary"])
+                st.markdown(f"<p style='font-size: 17px;'>{exp['summary']}</p>", unsafe_allow_html=True)
             
             if exp.get("signal_explanation"):
-                st.markdown(f"**Signal Evidence:** {exp['signal_explanation']}")
+                st.markdown(f"<p style='font-size: 17px;'><b>Signal Evidence:</b> {exp['signal_explanation']}</p>", unsafe_allow_html=True)
                 
             if exp.get("state_interpretation"):
-                st.markdown(f"**State Assessment:** {exp['state_interpretation']}")
+                st.markdown(f"<p style='font-size: 17px;'><b>State Assessment:</b> {exp['state_interpretation']}</p>", unsafe_allow_html=True)
                 
             if exp.get("recommendation_for_researcher"):
-                st.markdown(f"**Recommendation:** {exp['recommendation_for_researcher']}")
+                st.markdown(f"<p style='font-size: 17px;'><b>Recommendation:</b> {exp['recommendation_for_researcher']}</p>", unsafe_allow_html=True)
                 
             disclaimer = exp.get("research_disclaimer", "This system is a research prototype and not a clinical device.")
             st.info(f"**Research Note:** {disclaimer}")
@@ -298,10 +298,10 @@ def render_step_07(demo_data, tech_mode):
 
 def render_step_08(demo_data, tech_mode):
     st.markdown("<div class='fade-in' style='text-align: center; padding: 40px 0;'>", unsafe_allow_html=True)
-    st.markdown("<h1 style='font-size: 42px; letter-spacing: -1px; margin-bottom: 10px;'>FROM LIGHT<br>TO BLOOD PRESSURE</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-size: 44px; letter-spacing: -1px; margin-bottom: 10px;'>FROM LIGHT<br>TO BLOOD PRESSURE</h1>", unsafe_allow_html=True)
     
     st.markdown("""
-    <div style="display: flex; justify-content: center; align-items: center; gap: 15px; color: #86868b; font-size: 14px; font-weight: 500; margin: 30px 0;">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 15px; color: #86868b; font-size: 16px; font-weight: 500; margin: 30px 0;">
         <span>MAX30102</span> <span style="color:#d2d2d7;">→</span>
         <span>PPG</span> <span style="color:#d2d2d7;">→</span>
         <span>Deep Temporal Model</span> <span style="color:#d2d2d7;">→</span>
@@ -315,17 +315,17 @@ def render_step_08(demo_data, tech_mode):
     st.markdown(f"""
     <div style="background: white; border: 1px solid #E5E5EA; border-radius: 12px; padding: 30px; display: flex; justify-content: space-around; align-items: center; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
         <div style="text-align: center;">
-            <p style="color: #86868b; font-size: 13px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">BP Estimate</p>
-            <p style="font-size: 28px; font-weight: 600; margin: 0; color: #1d1d1f;">{payload['prediction']['sbp']:.0f} / {payload['prediction']['dbp']:.0f}</p>
+            <p style="color: #86868b; font-size: 15px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">BP Estimate</p>
+            <p style="font-size: 32px; font-weight: 600; margin: 0; color: #1d1d1f;">{payload['prediction']['sbp']:.0f} / {payload['prediction']['dbp']:.0f}</p>
         </div>
         <div style="width: 1px; height: 50px; background: #E5E5EA;"></div>
         <div style="text-align: center;">
-            <p style="color: #86868b; font-size: 13px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Reliability</p>
+            <p style="color: #86868b; font-size: 15px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Reliability</p>
             <span class="{payload['reliability_state'].lower()}-badge">{payload['reliability_state']}</span>
         </div>
         <div style="width: 1px; height: 50px; background: #E5E5EA;"></div>
         <div style="text-align: center;">
-            <p style="color: #86868b; font-size: 13px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Signal</p>
+            <p style="color: #86868b; font-size: 15px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Signal</p>
             <span class="neutral-badge">{payload['signal_quality']}</span>
         </div>
     </div>
@@ -333,8 +333,8 @@ def render_step_08(demo_data, tech_mode):
     
     st.markdown("""
     <div style="text-align: left; max-width: 600px; margin: 0 auto;">
-        <h3 style="font-size: 16px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">What the system did</h3>
-        <ol style="color: #333336; font-size: 15px; line-height: 1.8; padding-left: 20px;">
+        <h3 style="font-size: 18px; font-weight: 600; color: #86868b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">What the system did</h3>
+        <ol style="color: #333336; font-size: 17px; line-height: 1.8; padding-left: 20px;">
             <li>Captured an optical pulse signal.</li>
             <li>Checked whether the signal was usable.</li>
             <li>Processed the waveform into PPG, VPG and APG representations.</li>
@@ -344,7 +344,7 @@ def render_step_08(demo_data, tech_mode):
             <li>Optionally converted the structured result into a plain-language explanation.</li>
         </ol>
     </div>
-    <div style="margin-top: 60px; text-align: center; padding: 20px; background: #F5F5F7; border-radius: 8px; font-size: 13px; color: #86868b;">
+    <div style="margin-top: 60px; text-align: center; padding: 20px; background: #F5F5F7; border-radius: 8px; font-size: 15px; color: #86868b;">
         An end-to-end research prototype combining wearable optical sensing, temporal deep learning, uncertainty estimation, conformal prediction, and reliability-aware selective prediction.
     </div>
     </div>

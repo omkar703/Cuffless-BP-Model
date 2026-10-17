@@ -1,10 +1,30 @@
+# Large Local Datasets
 /BloodPressureDataset
-/logs
-/code/logs
+/BloodPressureDataset/*.mat
+
+# Environment & Virtual Environments
 .env
 .venv/
 code/.venv/
+venv/
+ENV/
+
+# Python & Jupyter Caches
 __pycache__/
 *.pyc
-*.h5
+*.pyo
+*.pyd
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+
+# Local Logs & Temporary Caches
+/logs/
+/code/logs/
 code/outputs/features/features_cache.h5
+*.log
+
+# OS & Streamlit Local Secrets
+.DS_Store
+Thumbs.db
+.streamlit/secrets.toml

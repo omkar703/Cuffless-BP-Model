@@ -52,7 +52,7 @@ def set_seed(seed: int = SEED):
 
 set_seed(SEED)
 
-PROJECT_ROOT = Path("/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 CODE_DIR = PROJECT_ROOT / "code"
 HARDWARE_DIR = PROJECT_ROOT / "hardware"
 OUTPUT_DIR = CODE_DIR / "outputs" / "phase6a_hardware_pipeline"

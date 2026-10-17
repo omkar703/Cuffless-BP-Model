@@ -42,7 +42,7 @@ print("=" * 70)
 # =========================================================================
 # 2. Directory Setup & Paths
 # =========================================================================
-PROJECT_ROOT = Path("/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 DATASET_DIR  = PROJECT_ROOT / "BloodPressureDataset"
 OUTPUT_DIR   = PROJECT_ROOT / "code" / "outputs" / "phase4b_temporal_gru"
 MANIFEST_GZ  = PROJECT_ROOT / "code" / "outputs" / "windows" / "window_manifest.csv.gz"

@@ -28,7 +28,7 @@ import torch
 import torch.nn as nn
 
 # Set paths
-PROJECT_ROOT = Path("/run/media/op/DATA/Omkar/VIT/4y/sem2/Capstone")
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 OUTPUT_DIR = PROJECT_ROOT / "code/outputs/phase7_reliability"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

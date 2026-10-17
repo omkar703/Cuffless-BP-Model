@@ -12,9 +12,83 @@ CODE_DIR = APP_DIR.parent
 PROJECT_ROOT = CODE_DIR.parent
 
 # Ensure project code is on sys.path
-for p in [CODE_DIR, CODE_DIR / "scripts", CODE_DIR / "phase4a"]:
+for p in [PROJECT_ROOT, CODE_DIR, CODE_DIR / "phase7_reliability", CODE_DIR / "scripts", CODE_DIR / "phase4a", APP_DIR]:
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
+
+# Cross-platform module aliases for deserialization compatibility
+try:
+    import phase7_reliability
+    import phase7_reliability.reliability_engine
+    sys.modules["phase7_reliability"] = phase7_reliability
+    sys.modules["phase7_reliability.reliability_engine"] = phase7_reliability.reliability_engine
+except Exception:
+    pass
+
+try:
+    import sklearn._loss._loss as _sklearn_loss
+    sys.modules["_loss"] = _sklearn_loss
+except Exception:
+    pass
+
+try:
+    import numpy._core as _np_core
+    sys.modules["numpy.core"] = _np_core
+    sys.modules["numpy.core.multiarray"] = _np_core.multiarray
+except Exception:
+    try:
+        import numpy.core as _np_core
+        sys.modules["numpy._core"] = _np_core
+        sys.modules["numpy._core.multiarray"] = _np_core.multiarray
+    except Exception:
+        pass
+
+import pickle
+
+class RobustUnpickler(pickle.Unpickler):
+    """
+    Robust Unpickler supporting cross-platform/cross-version deserialization:
+    - Resolves compiled '_loss' Cython module alias to 'sklearn._loss._loss'
+    - Resolves 'phase7_reliability' classes without requiring root-level pip installation
+    - Resolves NumPy 1.x vs 2.x namespace differences ('numpy.core' <-> 'numpy._core')
+    """
+    def find_class(self, module, name):
+        if module == "_loss":
+            try:
+                import sklearn._loss._loss as _loss_mod
+                return getattr(_loss_mod, name)
+            except Exception:
+                pass
+        if module.startswith("phase7_reliability"):
+            try:
+                import phase7_reliability.reliability_engine as _p7_mod
+                if hasattr(_p7_mod, name):
+                    return getattr(_p7_mod, name)
+            except Exception:
+                pass
+        if "numpy" in module:
+            if "core" in module:
+                try:
+                    import numpy._core.multiarray as _np_multi
+                    if hasattr(_np_multi, name):
+                        return getattr(_np_multi, name)
+                except Exception:
+                    pass
+                try:
+                    import numpy.core.multiarray as _np_multi
+                    if hasattr(_np_multi, name):
+                        return getattr(_np_multi, name)
+                except Exception:
+                    pass
+        return super().find_class(module, name)
+
+
+def safe_load_pickle(file_or_path):
+    """Safely load pickle files across different environments and package versions."""
+    if isinstance(file_or_path, (str, Path)):
+        with open(file_or_path, "rb") as f:
+            return RobustUnpickler(f).load()
+    return RobustUnpickler(file_or_path).load()
 
 # Frozen Checkpoints and Artifacts
 PHASE4A_CKPT = CODE_DIR / "outputs" / "phase4a_single_model" / "checkpoints" / "best_model_ppg_vpg_apg.pt"

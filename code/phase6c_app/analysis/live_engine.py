@@ -48,7 +48,7 @@ APP_DIR = Path(__file__).resolve().parent.parent
 CODE_DIR = APP_DIR.parent
 PROJECT_ROOT = CODE_DIR.parent
 
-for p in [CODE_DIR, CODE_DIR / "scripts", CODE_DIR / "phase4a"]:
+for p in [PROJECT_ROOT, CODE_DIR, CODE_DIR / "phase7_reliability", CODE_DIR / "scripts", CODE_DIR / "phase4a"]:
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
 
@@ -62,6 +62,7 @@ from phase6c_app.config import (
     WINDOW_SAMPLES,
     SEQUENCE_WINDOWS,
     EXPECTED_TOTAL_PARAMS,
+    safe_load_pickle,
 )
 from streaming_dsp import StreamingDSPPipeline
 from live_quality import WindowQualityAssessor
@@ -130,17 +131,14 @@ class LiveExperimentEngine:
         assert tot_params == EXPECTED_TOTAL_PARAMS, f"Parameter count mismatch: {tot_params} != {EXPECTED_TOTAL_PARAMS}"
 
         # 3. Phase 5C Isotonic Calibration & Conformal Quantiles
-        with open(ISOTONIC_SBP_PKL, "rb") as f:
-            self.isotonic_sbp = pickle.load(f)
-        with open(ISOTONIC_DBP_PKL, "rb") as f:
-            self.isotonic_dbp = pickle.load(f)
+        self.isotonic_sbp = safe_load_pickle(ISOTONIC_SBP_PKL)
+        self.isotonic_dbp = safe_load_pickle(ISOTONIC_DBP_PKL)
         with open(CONFORMAL_QUANTILES_JSON, "r") as f:
             self.conformal_quantiles = json.load(f)
 
         # 4. Phase 7 Reliability Engine
         rel_model_path = PROJECT_ROOT / "code" / "outputs" / "phase7_reliability" / "reliability_engine_model.pkl"
-        with open(rel_model_path, "rb") as f:
-            self.rel_engine = pickle.load(f)
+        self.rel_engine = safe_load_pickle(rel_model_path)
 
         self.is_loaded = True
 

@@ -40,6 +40,7 @@ from phase6c_app.config import (
     EXPECTED_CNN_PARAMS,
     EXPECTED_GRU_PARAMS,
     EXPECTED_TOTAL_PARAMS,
+    safe_load_pickle,
 )
 from streaming_dsp import StreamingDSPPipeline
 from live_quality import WindowQualityAssessor
@@ -129,10 +130,8 @@ class FrozenPipelineRunner:
         # 4. Phase 5C Calibration Artifacts
         has_phase5c = False
         if ISOTONIC_SBP_PKL.exists() and ISOTONIC_DBP_PKL.exists() and CONFORMAL_QUANTILES_JSON.exists():
-            with open(ISOTONIC_SBP_PKL, "rb") as f:
-                self.isotonic_sbp = pickle.load(f)
-            with open(ISOTONIC_DBP_PKL, "rb") as f:
-                self.isotonic_dbp = pickle.load(f)
+            self.isotonic_sbp = safe_load_pickle(ISOTONIC_SBP_PKL)
+            self.isotonic_dbp = safe_load_pickle(ISOTONIC_DBP_PKL)
             with open(CONFORMAL_QUANTILES_JSON, "r") as f:
                 self.conformal_quantiles = json.load(f)
             has_phase5c = True

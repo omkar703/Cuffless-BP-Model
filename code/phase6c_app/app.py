@@ -8,9 +8,11 @@ APP_DIR = Path(__file__).resolve().parent
 CODE_DIR = APP_DIR.parent
 PROJECT_ROOT = CODE_DIR.parent
 
-for p in [APP_DIR, CODE_DIR, CODE_DIR / "scripts", CODE_DIR / "phase4a"]:
+for p in [PROJECT_ROOT, CODE_DIR, CODE_DIR / "phase7_reliability", APP_DIR, CODE_DIR / "scripts", CODE_DIR / "phase4a"]:
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
+
+import phase6c_app.config  # Initializes safe_load_pickle and cross-platform module aliases
 
 from phase6c_app.ui.theme import apply_premium_theme
 from phase6c_app.ui.components import render_progress_bar, render_navigation_buttons

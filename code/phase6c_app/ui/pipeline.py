@@ -43,10 +43,9 @@ def load_and_run_demo_session():
     replay_result = runner.run_replay(sdata.df_ppg_replay, progress_callback=lambda x: None)
 
     # 4. Generate Reliability Payload for a representative prediction
-    import pickle
+    from phase6c_app.config import safe_load_pickle
     rel_model_path = PROJECT_ROOT / "code/outputs/phase7_reliability/reliability_engine_model.pkl"
-    with open(rel_model_path, "rb") as f:
-        rel_engine = pickle.load(f)
+    rel_engine = safe_load_pickle(rel_model_path)
     
     df_pred = replay_result.df_predictions
     

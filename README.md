@@ -8,24 +8,30 @@ A physiological computing system for continuous, non-invasive, calibration-free 
 
 ### 1. Physical Sensor & Live Inference Demonstration
 <div align="center">
-  <video src="results/demo_video.mp4" controls="controls" width="100%" style="max-width: 820px; border-radius: 8px;">
-    Your browser does not support the video tag. Watch the demonstration video: <a href="results/demo_video.mp4">results/demo_video.mp4</a>
-  </video>
-  <p><em>Demonstration 1: Real-time physical optical pulse acquisition using MAX30102 sensor, streaming DSP conditioning, and neural blood pressure estimation.</em></p>
+  <a href="https://github.com/omkar703/Cuffless-BP-Model/blob/main/results/demo_video.mp4">
+    <img src="results/demo_hardware_preview.gif" alt="Physical Hardware Sensor Demonstration Preview (Click to Watch Full Video)" width="85%" style="border-radius: 8px; border: 1px solid #d2d2d7;"/>
+  </a>
+  <p>
+    <em>Demonstration 1: Real-time optical pulse acquisition using MAX30102 sensor, streaming DSP conditioning, and neural blood pressure estimation.</em><br/>
+    <strong><a href="https://github.com/omkar703/Cuffless-BP-Model/blob/main/results/demo_video.mp4">&#9658; Click here to watch the full 1080p Demonstration Video (1m 56s)</a></strong>
+  </p>
 </div>
 
 ### 2. Microcontroller Wiring & Hardware Pinout Diagram (ESP32 to MAX30102)
 <div align="center">
-  <img src="results/pin_diagram.jpg" alt="ESP32 to MAX30102 Hardware Pinout Connection Diagram" width="85%" style="border-radius: 8px;"/>
-  <p><em>Figure: Hardware connection and pinout diagram connecting the MAX30102 reflective pulse oximeter module to the ESP32 microcontroller over I2C (VIN &rarr; 3.3V, GND &rarr; GND, SDA &rarr; GPIO 21, SCL &rarr; GPIO 22).</em></p>
+  <img src="results/pin_diagram.jpg" alt="ESP32 to MAX30102 Hardware Pinout Connection Diagram" width="85%" style="border-radius: 8px; border: 1px solid #d2d2d7;"/>
+  <p><em>Figure: Microcontroller-to-sensor circuit wiring schematic connecting the MAX30102 reflective pulse oximeter module to the ESP32 development board via I2C (VIN &rarr; 3.3V, GND &rarr; GND, SDA &rarr; GPIO 21, SCL &rarr; GPIO 22).</em></p>
 </div>
 
 ### 3. Real-Time Streaming Pipeline Execution
 <div align="center">
-  <video src="results/demo_video_2.mp4" controls="controls" width="100%" style="max-width: 820px; border-radius: 8px;">
-    Your browser does not support the video tag. Watch the pipeline video: <a href="results/demo_video_2.mp4">results/demo_video_2.mp4</a>
-  </video>
-  <p><em>Demonstration 2: Continuous rolling waveform buffer, causal polyphase resampling, conformal bounds, and multi-domain reliability triage.</em></p>
+  <a href="https://github.com/omkar703/Cuffless-BP-Model/blob/main/results/demo_video_2.mp4">
+    <img src="results/demo_preview.gif" alt="Real-Time Streaming Pipeline Execution Preview (Click to Watch Full Video)" width="85%" style="border-radius: 8px; border: 1px solid #d2d2d7;"/>
+  </a>
+  <p>
+    <em>Demonstration 2: Continuous rolling waveform buffer, causal polyphase resampling, conformal bounds, and multi-domain reliability triage.</em><br/>
+    <strong><a href="https://github.com/omkar703/Cuffless-BP-Model/blob/main/results/demo_video_2.mp4">&#9658; Click here to watch the full 1080p Streaming Pipeline Video (41s)</a></strong>
+  </p>
 </div>
 
 ---
